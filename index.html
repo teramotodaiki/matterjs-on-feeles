@@ -65,83 +65,6 @@
 --></script>
 <script
   class="download_content"
-  name="snippets/オブジェクト.json"
-  data-type="application/json"
-  data-credits="[]"
-  
-  
-  type="hack"
-><!--
-{
-	".source.js": {
-		"rectangle": {
-			"prefix": "rectangle",
-			"leftLabel": "レクタングル",
-			"description": "四角形のオブジェクト。中心の位置と大きさを指定できる",
-			"body": `
-Assets.rectangle(140, 0, 80, 80);`			
-		},
-		"wall": {
-			"prefix": "floor",
-			"leftLabel": "フロア",
-			"description": "固定された四角形のオブジェクト。床や壁になる",
-			"body": `
-Assets.rectangle(400, 600, 400, 40, {
-	isStatic: true,
-});`
-		},
-		"slope": {
-			"prefix": "slope",
-			"leftLabel": "スロープ",
-			"description": "少しかたむいたオブジェクト。ボールなどを置くと転がる",
-			"body": `
-Assets.rectangle(400, 600, 400, 40, {
-	isStatic: true,
-	angle: 0.15,
-});`
-		},
-		"circle": {
-			"prefix": "circle",
-			"leftLabel": "サークル",
-			"description": "円のオブジェクト。中心の位置と半径を指定できる",
-			"body": `
-Assets.circle(240, 0, 40);`
-		},
-		"ball": {
-			"prefix": "ball",
-			"leftLabel": "ボール",
-			"description": "跳ね返り係数を 1 にした、円のオブジェクト。とても跳ねる",
-			"body": `
-Assets.circle(340, 0, 40, {
-	restitution: 1,
-});`
-		},
-		"redball": {
-			"prefix": "colorball",
-			"leftLabel": "カラーボール",
-			"description": "赤色のボール",
-			"body": `
-Assets.circle(340, 0, 40, {
-	restitution: 1,
-	render: {
-		fillStyle: 'red',
-		lineWidth: 10,
-		strokeStyle: 'black',
-	},
-});`
-		}
-	}
-}
-
-
-
-
-
-
-
---></script>
-<script
-  class="download_content"
   name="feeles/codemirror.json"
   data-type="application/json"
   data-credits="[]"
@@ -164,42 +87,6 @@ Assets.circle(340, 0, 40, {
 		"scanUp": false
 	}
 }
---></script>
-<script
-  class="download_content"
-  name="free/main.js"
-  data-type="text/javascript"
-  data-credits="[]"
-  
-  
-  type="hack"
-><!--
-import Assets from 'free/Assets';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 --></script>
 <script
   class="download_content"
@@ -258,28 +145,6 @@ import Assets from 'free/Assets';
 
 
 
---></script>
-<script
-  class="download_content"
-  name="free/index.html"
-  data-type="text/html"
-  data-credits="[]"
-  
-  
-  type="hack"
-><!--
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>自由コーナー</title>
-		<link rel="stylesheet" href="style.css" />
-		<script src="free/main.js"></script>
-	</head>
-	<body>
-
-	</body>
-</html>
 --></script>
 <script
   class="download_content"
@@ -634,56 +499,6 @@ window.MatterWrap = MatterWrap;
   "presets": ["es2015", "stage-3"],
   "plugins": ["transform-class-properties"]
 }
-
---></script>
-<script
-  class="download_content"
-  name="free/Assets.js"
-  data-type="text/javascript"
-  data-credits="[]"
-  
-  
-  type="hack"
-><!--
-import {
-	World,
-	Bodies,
-	Render,
-	Engine,
-} from 'matter';
-
-
-import engine from 'engine';
-import render from 'render';
-
-
-// run the engine
-Engine.run(engine);
-
-// run the renderer
-Render.run(render);
-
-
-const Assets = {};
-
-Object.keys(Bodies).forEach((shape) => {
-
-	Assets[shape] = (...args) => {
-		const self = Bodies[shape](...args);
-		World.add(engine.world, self);
-		return Promise.resolve(self);
-	};
-
-	Assets[shape + 'Sync'] = (...args) => {
-		const self = Bodies[shape](...args);
-		World.add(engine.world, self);
-		return self;
-	};
-
-});
-
-export default Assets;
-
 
 --></script>
 <script
@@ -21561,6 +21376,252 @@ stiffness | ばねの硬さ | *N / m* | 0 | 1.0
 ![メニューに戻る](index.html)
 
 
+--></script>
+<script
+  class="download_content"
+  name="snippets/オブジェクト.json"
+  data-type="application/json"
+  data-credits="[]"
+  
+  
+  type="hack"
+><!--
+{
+	".source.js": {
+		"rectangle": {
+			"prefix": "rectangle",
+			"leftLabel": "レクタングル",
+			"description": "四角形のオブジェクト。中心の位置と大きさを指定できる",
+			"body": `
+World.add(world, Bodies.rectangle(140, 0, 80, 80));`			
+		},
+		"wall": {
+			"prefix": "floor",
+			"leftLabel": "フロア",
+			"description": "固定された四角形のオブジェクト。床や壁になる",
+			"body": `
+World.add(world, Bodies.rectangle(400, 600, 400, 40, {
+	isStatic: true,
+}));`
+		},
+		"slope": {
+			"prefix": "slope",
+			"leftLabel": "スロープ",
+			"description": "少しかたむいたオブジェクト。ボールなどを置くと転がる",
+			"body": `
+World.add(world, Bodies.rectangle(400, 600, 400, 40, {
+	isStatic: true,
+	angle: 0.15,
+}));`
+		},
+		"circle": {
+			"prefix": "circle",
+			"leftLabel": "サークル",
+			"description": "円のオブジェクト。中心の位置と半径を指定できる",
+			"body": `
+World.add(world, Bodies.circle(240, 0, 40));`
+		},
+		"ball": {
+			"prefix": "ball",
+			"leftLabel": "ボール",
+			"description": "跳ね返り係数を 1 にした、円のオブジェクト。とても跳ねる",
+			"body": `
+World.add(world, Bodies.circle(240, 0, 40, {
+	restitution: 1,
+}));`
+		},
+		"redball": {
+			"prefix": "colorball",
+			"leftLabel": "カラーボール",
+			"description": "赤色のボール",
+			"body": `
+World.add(world, Bodies.circle(240, 0, 40, {
+	restitution: 1,
+	render: {
+		fillStyle: 'red',
+		lineWidth: 10,
+		strokeStyle: 'black',
+	}
+}));`
+		}
+	}
+}
+
+
+
+
+
+
+
+--></script>
+<script
+  class="download_content"
+  name="free/Assets.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  is-trashed
+  
+  type="hack"
+><!--
+import {
+	World,
+	Bodies,
+	Render,
+	Engine,
+} from 'matter';
+
+
+import engine from 'engine';
+import render from 'render';
+
+
+// run the engine
+Engine.run(engine);
+
+// run the renderer
+Render.run(render);
+
+
+const Assets = {};
+
+Object.keys(Bodies).forEach((shape) => {
+
+	Assets[shape] = (...args) => {
+		const self = Bodies[shape](...args);
+		World.add(engine.world, self);
+		return Promise.resolve(self);
+	};
+
+	Assets[shape + 'Sync'] = (...args) => {
+		const self = Bodies[shape](...args);
+		World.add(engine.world, self);
+		return self;
+	};
+
+});
+
+export default Assets;
+
+
+--></script>
+<script
+  class="download_content"
+  name="free/README.md"
+  data-type="text/x-markdown"
+  data-credits="[]"
+  
+  
+  type="hack"
+><!--
+# 自由コーナー
+
+
+ここでは君の作りたいものをゼロから作り始めることができるよ  
+思う存分、研究を楽しもう！！
+
+
+## アセット
+
+このカードの下にはアセットのカードが出ているんだ  
+きれいに並んでいる正方形の白い紙のことだよ
+
+アセットは、コードまでマウスで引っ張って使うよ  
+*FREE SPACE* と書いてある部分よりも下なら、どこにでも置いていいんだ
+
+置き終わったら、 **プレイ** を押して結果を見てみよう  
+もちろん、コードを自分で入力してもいいよ
+
+## アセットをつくる
+
+自分でアセットを作ってみたくなった？  
+では、 [この JSON ファイル](snippets/オブジェクト.json) を書きかえてみてね
+
+かなり上級者向けだけど、他の人たちがアセットを使ってくれたら、嬉しいね！
+
+
+[メニューに戻る](index.html)
+
+
+
+
+
+
+
+
+
+
+--></script>
+<script
+  class="download_content"
+  name="free/main.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  
+  
+  type="hack"
+><!--
+import {
+	World,
+	Bodies,
+	Render,
+	Engine,
+	
+} from 'matter';
+import engine from 'engine';
+import render from 'render';
+const world = engine.world;
+
+/* ----==== FREE SPACE ====---- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Engine.run(engine);
+Render.run(render);
+
+
+feeles.openReadme('free/README.md');
+
+
+--></script>
+<script
+  class="download_content"
+  name="free/index.html"
+  data-type="text/html"
+  data-credits="[]"
+  
+  
+  type="hack"
+><!--
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>.自由コーナー</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="free/main.js"></script>
+	</head>
+	<body>
+
+	</body>
+</html>
 --></script>
 
 
