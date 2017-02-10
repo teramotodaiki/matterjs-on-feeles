@@ -102,7 +102,7 @@
   name=".provider"
   data-type="application/json"
   data-credits="[]"
-  data-last-modified="1486461030285"
+  data-last-modified="1486711506527"
   
   
   type="hack"
@@ -172,7 +172,7 @@ Matter.js の本体。バージョン 0.11.1-alpha のオールインワン ビ�
   name="airFriction/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486468702734"
+  data-last-modified="1486692911681"
   
   
   type="hack"
@@ -204,6 +204,9 @@ frictionAir | ていこうの大きさ | 0 ~ 1.0
 
 ## 応用例
 
+[モンケーン](wreckingBall/index.html)
+
+
 --></script>
 <script
   class="download_content"
@@ -222,9 +225,9 @@ frictionAir | ていこうの大きさ | 0 ~ 1.0
 		<title>空気抵抗</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="airFriction/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -476,51 +479,10 @@ angle | オブジェクトの **ラジアン角** | なし
 		<title>かたむき</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="angle/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
---></script>
-<script
-  class="download_content"
-  name="angle/main.js"
-  data-type="text/javascript"
-  data-credits="[]"
-  data-last-modified="1486545936031"
-  
-  
-  type="hack"
-><!--
-import {
-	World,
-	Bodies,
-} from 'matter';
-
-import {
-	world,
-} from './setting.js';
-
-World.add(world, [
-	
-	// 左のオブジェクト
-	Bodies.rectangle(200, 500, 10, 500, {
-		// かたむき
-		angle: 0.3,
-		
-	}),
-	
-	// 右のオブジェクト
-	Bodies.rectangle(350, 450, 10, 700, {
-		// かたむき
-		angle: 2.36,
-		
-	}),
-	
-]);
-
-
-import './stage.js';
-
 --></script>
 <script
   class="download_content"
@@ -670,9 +632,9 @@ isStatic | 静止するかどうか | フラグ | false | true
 		<title>万有引力</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="attractors/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -846,9 +808,9 @@ isStatic | 静止するかどうか | フラグ | false | true
 		<title>坂道</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="avalanche/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -1002,9 +964,9 @@ isStatic | 静止するかどうか | フラグ | false | true
 		<title>ボールプール</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="ballPool/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -1117,36 +1079,30 @@ feeles.openReadme('ballPool/README.md');
   name="bridge/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486429039268"
+  data-last-modified="1486699342986"
   
   
   type="hack"
 ><!--
 # ブリッジ
   
-いくつかの四角形をチェーンでつなげたあと、  
-両端の四角形を固定すると、橋を作ることができるよ
-
-## パラメータ
-パラメータ | 意味 | 単位 | 最小 | 最大 
---- | --- | --- | --- | ---
-stiffness | ばねの硬さ | *N / m* | 0 | 1.0 
-
-## フックの法則
-
-チェーンのひとつひとつに注目すると、 ばね のようになっているよね  
-フックの法則によると ばね が元に戻ろうとする力は、  
-ばねが伸びた長さに、ある定数をかけたものなんだ
-
-ある定数のことを **ばね定数** と言って、  
-パラメータでは `stiffness` のことだよ
-
-
-## ![改造する](bridge/main.js)
-
+橋作ってみた
 
 [メニューに戻る](index.html)
 
+
+## どうやって作ってるの？
+
+これらを組み合わせているよ  
+> クリックするとサンプルに移動します
+
+橋を作るには…[バネ](constraint/index.html) と [ロープ](chains/index.html)  
+
+## 改造に挑戦してみる
+
+![橋を作る](bridge/main.js)  
+![ステージ](bridge/stage.js)  
+![設定](bridge/setting.js)
 
 
 --></script>
@@ -1167,9 +1123,9 @@ stiffness | ばねの硬さ | *N / m* | 0 | 1.0
 		<title>ブリッジ</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="bridge/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -1177,23 +1133,107 @@ stiffness | ばねの硬さ | *N / m* | 0 | 1.0
   name="bridge/main.js"
   data-type="text/javascript"
   data-credits="[{&quot;label&quot;:&quot;Copyright (c) 2014 Liam Brummitt&quot;,&quot;url&quot;:&quot;http://brm.io/matter-js/&quot;,&quot;timestamp&quot;:1485562830829,&quot;hash&quot;:&quot;cb1c7795dadf02cbac056f13d28a3ab9&quot;}]"
-  data-last-modified="0"
+  data-last-modified="1486698855158"
   
   
   type="hack"
 ><!--
 import {
-	Engine,
-	Render,
-	Runner,
 	Body,
 	Composites,
-	Common,
 	Constraint,
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+// 橋の中のオブジェクト同士がぶつからないようにするためのグループ
+const group1 = Body.nextGroup(true);
+
+// 橋のオブジェクトのスタック
+const bridge = Composites.stack(150, 300, 9, 1, 10, 10, (x, y) => {
+	return Bodies.rectangle(x, y, 50, 20, {
+		collisionFilter: {
+			group: group1,
+		},
+		
+	});
+});
+
+// 橋のオブジェクトをチェーンでつなぐ
+Composites.chain(bridge, 0.5, 0, -0.5, 0, {
+	// バネの強さ
+	stiffness: 0.9,
+	
+});
+
+
+
+World.add(world, [
+	// 橋のスタック
+	bridge,
+	
+	// 	左側を固定する
+	Constraint.create({
+		// 固定する点
+		pointA: {
+			x: 140,
+			y: 300
+		},
+		// 橋の一番左のオブジェクト
+		bodyB: bridge.bodies[0],
+		// オブジェクトの左端を固定
+		pointB: {
+			x: -25,
+			y: 0
+		},
+		
+	}),
+	
+	// 	右側を固定する
+	Constraint.create({
+		// 固定する点
+		pointA: {
+			x: 660,
+			y: 300
+		},
+		// 橋の一番右のオブジェクト
+		bodyB: bridge.bodies[8],
+		// オブジェクトの右端を固定
+		pointB: {
+			x: 25,
+			y: 0
+		},
+		
+	}),
+	
+]);
+
+
+
+import './stage';
+
+--></script>
+<script
+  class="download_content"
+  name="bridge/setting.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486698732115"
+  
+  
+  type="hack"
+><!--
+import {
+	Render,
+	Runner,
 	MouseConstraint,
 	Mouse,
 	World,
-	Bodies,
 } from 'matter';
 
 
@@ -1202,68 +1242,11 @@ const world = engine.world;
 
 import render from 'render';
 Render.run(render);
+render.options.background = '#aaaaaa';
 
 const runner = Runner.create();
 Runner.run(runner, engine);
 
-// add bodies
-const group = Body.nextGroup(true);
-
-// 端の部分
-const bridge = Composites.stack(150, 300, 9, 1, 10, 10, (x, y) => {
-	return Bodies.rectangle(x, y, 50, 20, {
-		collisionFilter: {
-			group,
-		}
-	});
-});
-
-// 端の部分を chain でつなぐ
-Composites.chain(bridge, 0.5, 0, -0.5, 0, {
-	stiffness: 0.9
-});
-
-// 上に乗っているオブジェクト
-const stack = Composites.stack(200, 40, 6, 3, 0, 0, (x, y) => {
-	return Bodies.polygon(x, y, Math.round(Common.random(1, 8)), Common.random(20, 40));
-});
-
-World.add(world, [
-	bridge,
-	// 	左の大きな四角
-	Bodies.rectangle(80, 440, 120, 280, {
-		isStatic: true
-	}),
-	// 	右の大きな四角
-	Bodies.rectangle(720, 440, 120, 280, {
-		isStatic: true
-	}),
-	// 	端の左側を固定する
-	Constraint.create({
-		pointA: {
-			x: 140,
-			y: 300
-		},
-		bodyB: bridge.bodies[0],
-		pointB: {
-			x: -25,
-			y: 0
-		}
-	}),
-	// 	端の右側を固定する
-	Constraint.create({
-		pointA: {
-			x: 660,
-			y: 300
-		},
-		bodyB: bridge.bodies[8],
-		pointB: {
-			x: 25,
-			y: 0
-		}
-	}),
-	stack
-]);
 
 // マウス操作
 const mouse = Mouse.create(render.canvas);
@@ -1285,6 +1268,53 @@ render.mouse = mouse;
 
 feeles.openReadme('bridge/README.md');
 
+
+export {
+	engine,
+	world,
+	render,
+};
+
+--></script>
+<script
+  class="download_content"
+  name="bridge/stage.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486693849398"
+  
+  
+  type="hack"
+><!--
+import {
+	Composites,
+	World,
+	Bodies,
+	Common,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+World.add(world, [
+	// 	左の大きな四角
+	Bodies.rectangle(80, 440, 120, 280, {
+		isStatic: true,
+	}),
+
+	// 	右の大きな四角
+	Bodies.rectangle(720, 440, 120, 280, {
+		isStatic: true,
+	}),
+
+	// 上に乗っているオブジェクトのスタック
+	Composites.stack(200, 40, 6, 3, 0, 0, (x, y) => {
+		return Bodies.polygon(x, y, Math.round(Common.random(1, 8)), Common.random(20, 40));
+	}),
+
+]);
 --></script>
 <script
   class="download_content"
@@ -1355,9 +1385,9 @@ isStatic | 静止するかどうか | フラグ | false | true
 		<title>ブロードフェーズ</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="broadphase/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -1455,32 +1485,33 @@ feeles.openReadme('broadphase/README.md');
   name="car/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486431619174"
+  data-last-modified="1486628273013"
   
   
   type="hack"
 ><!--
 # 車
 
-`Composites.car` を使うと、車のようなオブジェクトを作れるよ
-
-
-## ![改造する](car/main.js)
-
-
-## 車のパラメータ
-
-### Composites.car( *x* , *y* , *width* , *height* , *radius* )
-パラメータ | 意味 | 単位 | 最小 | 最大 
---- | --- | --- | --- | ---
-x | 車の中心の位置（横） | px | 0 | 800
-y | 車の中心の位置（縦） | px | 0 | 600 
-width | 車の幅 | px | 0 | Infinity 
-height | 車の高さ | px | 0 | Infinity 
-radius | タイヤの大きさ | px | 0 | Infinity 
-
+車ころがしてみた
 
 [メニューに戻る](index.html)
+
+## 改造してみる
+
+![ここから始める](car/main.js)
+
+Composites.car(`1`, `2`, `3`, `4`, `5`)
+| | 意味 | はんい
+--- | --- | --- 
+1 | 左からのキョリ | 0 ~ 800
+2 | 上からのキョリ | 0 ~ 600 
+3 | 車の横幅 | 0 ~  
+4 | 車の高さ | 0 ~  
+5 | タイヤの大きさ | 0 ~  
+
+もっと改造
+![設定](car/setting.js)
+![かべ・ゆか](car/stage.js)
 
 
 --></script>
@@ -1501,9 +1532,9 @@ radius | タイヤの大きさ | px | 0 | Infinity
 		<title>車</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="car/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -1511,7 +1542,45 @@ radius | タイヤの大きさ | px | 0 | Infinity
   name="car/main.js"
   data-type="text/javascript"
   data-credits="[{&quot;label&quot;:&quot;Copyright (c) 2014 Liam Brummitt&quot;,&quot;url&quot;:&quot;http://brm.io/matter-js/&quot;,&quot;timestamp&quot;:1485562830829,&quot;hash&quot;:&quot;e83b84ed0e9c90529287765030449b6b&quot;}]"
-  data-last-modified="0"
+  data-last-modified="1486628111201"
+  
+  
+  type="hack"
+><!--
+import {
+	Composites,
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+World.add(world, [
+
+	// 車
+	Composites.car(150, 100, 100, 40, 30),
+
+]);
+
+
+
+
+
+
+
+
+
+
+import './stage';
+--></script>
+<script
+  class="download_content"
+  name="car/setting.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486627850580"
   
   
   type="hack"
@@ -1520,11 +1589,9 @@ import {
 	Engine,
 	Render,
 	Runner,
-	Composites,
 	MouseConstraint,
 	Mouse,
 	World,
-	Bodies,
 } from 'matter';
 
 
@@ -1540,45 +1607,6 @@ const runner = Runner.create();
 Runner.run(runner, engine);
 
 
-World.add(world, [
-	// 	壁
-	Bodies.rectangle(400, 0, 800, 50, {
-		isStatic: true
-	}),
-	Bodies.rectangle(400, 600, 800, 50, {
-		isStatic: true
-	}),
-	Bodies.rectangle(800, 300, 50, 600, {
-		isStatic: true
-	}),
-	Bodies.rectangle(0, 300, 50, 600, {
-		isStatic: true
-	})
-]);
-
-// 車1
-const scale1 = 0.9;
-World.add(world, Composites.car(150, 100, 100 * scale1, 40 * scale1, 30 * scale1));
-
-// 車2
-const scale2 = 0.8;
-World.add(world, Composites.car(350, 300, 100 * scale2, 40 * scale2, 30 * scale2));
-
-World.add(world, [
-	// 	坂道
-	Bodies.rectangle(200, 150, 400, 20, {
-		isStatic: true,
-		angle: Math.PI * 0.06
-	}),
-	Bodies.rectangle(500, 350, 650, 20, {
-		isStatic: true,
-		angle: -Math.PI * 0.06
-	}),
-	Bodies.rectangle(300, 560, 600, 20, {
-		isStatic: true,
-		angle: Math.PI * 0.04
-	})
-]);
 
 // マウス操作
 const mouse = Mouse.create(render.canvas);
@@ -1600,44 +1628,97 @@ render.mouse = mouse;
 
 feeles.openReadme('car/README.md');
 
+
+export {
+	engine,
+	world,
+	render,
+};
+
+--></script>
+<script
+  class="download_content"
+  name="car/stage.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486627969360"
+  
+  
+  type="hack"
+><!--
+import {
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+World.add(world, [
+	// 	壁
+	Bodies.rectangle(400, 0, 800, 50, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(400, 600, 800, 50, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(800, 300, 50, 600, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(0, 300, 50, 600, {
+		isStatic: true,
+	}),
+	
+	// 	坂道
+	Bodies.rectangle(200, 150, 400, 20, {
+		isStatic: true,
+		angle: Math.PI * 0.06,
+	}),
+	Bodies.rectangle(550, 350, 650, 20, {
+		isStatic: true,
+		angle: -Math.PI * 0.06,
+	}),
+	Bodies.rectangle(300, 560, 600, 20, {
+		isStatic: true,
+		angle: Math.PI * 0.04,
+	}),
+	
+]);
+
 --></script>
 <script
   class="download_content"
   name="catapult/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486430887736"
+  data-last-modified="1486701128545"
   
   
   type="hack"
 ><!--
 # 発射台
 
-
-長い板を二点で地面に引っ張って固定すると、シーソーのできあがり  
-シーソーの反対に重いオブジェクトを落としたら、すなわち発射台！！
-
-
-## ![改造する](catapult/main.js)
-
-
-## パラメータ
-パラメータ | 意味 | 単位 | 最小 | 最大 
---- | --- | --- | --- | ---
-density | 密度 | *kg m^-2* | 0 | Infinity 
-isStatic | 静止するかどうか | フラグ | false | true 
-
-
-## 密度
-
-密度とは、質量（重さ）を大きさ（面積）で割ったものだよ  
-
-つまり、
-密度 × 面積 = 質量  
-とも言えるんだ
-
+ふっとばしてやったぜ💥
 
 [メニューに戻る](index.html)
+
+
+## どうやって作ってるの？
+
+これらを組み合わせているよ  
+> クリックするとサンプルに移動します
+
+重さを変えるには…[おもさ](density/index.html)  
+シーソーを作るには…[バネ](constraint/index.html)  
+ストッパーを作るには…[かべ・ゆか](isStatic/index.html)  
+
+## 改造に挑戦してみる
+
+![発射台を作る](catapult/main.js)  
+![ステージ](catapult/stage.js)  
+![設定](catapult/setting.js)
 
 
 --></script>
@@ -1658,9 +1739,9 @@ isStatic | 静止するかどうか | フラグ | false | true
 		<title>発射台</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="catapult/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -1668,7 +1749,81 @@ isStatic | 静止するかどうか | フラグ | false | true
   name="catapult/main.js"
   data-type="text/javascript"
   data-credits="[{&quot;label&quot;:&quot;Copyright (c) 2014 Liam Brummitt&quot;,&quot;url&quot;:&quot;http://brm.io/matter-js/&quot;,&quot;timestamp&quot;:1485562830829,&quot;hash&quot;:&quot;76cbd514a07fc3b674f07edda75056f1&quot;}]"
-  data-last-modified="0"
+  data-last-modified="1486716792366"
+  
+  
+  type="hack"
+><!--
+import {
+	Composites,
+	Constraint,
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+// 台をつくる
+const catapult = Bodies.rectangle(400, 520, 320, 20);
+
+World.add(world, [
+	// 台のオブジェクト
+	catapult,
+
+	// 台を固定するバネ 1
+	Constraint.create({
+		// 固定するオブジェクト
+		bodyA: catapult,
+		// 固定するポイント
+		pointB: {
+			x: 390,
+			y: 580
+		},
+
+	}),
+
+	// 台を固定するバネ 2
+	Constraint.create({
+		// 固定するオブジェクト
+		bodyA: catapult,
+		// 固定するポイント
+		pointB: {
+			x: 410,
+			y: 580
+		},
+
+	}),
+
+	// 左下にあるストッパー
+	Bodies.rectangle(250, 555, 20, 50, {
+		// 固定する
+		isStatic: true,
+
+	}),
+
+	// 落ちてくる大きな円
+	Bodies.circle(560, 100, 50, {
+		// おもさ
+		density: 0.0000000005,
+
+	}),
+
+]);
+
+
+
+import './stage';
+
+--></script>
+<script
+  class="download_content"
+  name="catapult/setting.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486702690259"
   
   
   type="hack"
@@ -1677,12 +1832,9 @@ import {
 	Engine,
 	Render,
 	Runner,
-	Composites,
-	Constraint,
 	MouseConstraint,
 	Mouse,
 	World,
-	Bodies,
 } from 'matter';
 
 
@@ -1698,46 +1850,6 @@ Render.run(render);
 const runner = Runner.create();
 Runner.run(runner, engine);
 
-
-// 小さなオブジェクト
-const stack = Composites.stack(250, 255, 1, 6, 0, 0, (x, y) => {
-	return Bodies.rectangle(x, y, 30, 30);
-});
-
-// 台
-const catapult = Bodies.rectangle(400, 520, 320, 20);
-
-World.add(world, [
-	stack,
-	catapult,
-	// 	地面
-	Bodies.rectangle(400, 600, 800, 50.5, {
-		isStatic: true
-	}),
-	// 	ストッパー
-	Bodies.rectangle(250, 555, 20, 50, {
-		isStatic: true
-	}),
-	// 	大きな円
-	Bodies.circle(560, 100, 50, {
-		density: 0.005
-	}),
-	// 	台を固定する
-	Constraint.create({
-		bodyA: catapult,
-		pointB: {
-			x: 390,
-			y: 580
-		}
-	}),
-	Constraint.create({
-		bodyA: catapult,
-		pointB: {
-			x: 410,
-			y: 580
-		}
-	})
-]);
 
 // マウス操作
 const mouse = Mouse.create(render.canvas);
@@ -1759,43 +1871,85 @@ render.mouse = mouse;
 
 feeles.openReadme('catapult/README.md');
 
+
+export {
+	engine,
+	world,
+	render,
+};
+
+--></script>
+<script
+  class="download_content"
+  name="catapult/stage.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486702972122"
+  
+  
+  type="hack"
+><!--
+import {
+	Composites,
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+World.add(world, [
+	// 小さなオブジェクトのスタック
+	Composites.stack(250, 255, 1, 6, 0, 0, (x, y) => {
+		return Bodies.rectangle(x, y, 30, 30);
+	}),
+
+	// 地面のオブジェクト
+	Bodies.rectangle(400, 600, 800, 50.5, {
+		isStatic: true,
+
+	}),
+
+]);
+
 --></script>
 <script
   class="download_content"
   name="chains/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486428965965"
+  data-last-modified="1486699292993"
   
   
   type="hack"
 ><!--
-# チェーン
+# ロープ
 
-`Composites.chain` を使うと、チェーン（くさり）のような  
-オブジェクトを作ることができるよ
-
-
-## パラメータ
-パラメータ | 意味 | 単位 | 最小 | 最大 
---- | --- | --- | --- | ---
-stiffness | ばねの硬さ | *N / m* | 0 | 1.0 
-
-
-## ![改造する](chains/main.js)
-
-
-## スタックの使い方について
-
-このサンプルでは、ふたつのチェーンがぶつからないよう  
-スタックを二行にしているよ
-
-### イメージ
-
-![イメージ](chains/image.png)
-
+チェーンとスタックを使って、オブジェクトのロープを作ってみた
 
 [メニューに戻る](index.html)
+
+
+## どうやって作ってるの？
+
+これらを組み合わせているよ  
+> クリックするとサンプルに移動します
+
+オブジェクトを一気に並べるには…[スタック](stack/index.html)  
+ロープを空中に固定するには…[バネ](constraint/index.html)  
+
+## 改造に挑戦してみる
+
+![ロープを作る](chains/main.js)  
+![設定](chains/setting.js)
+
+- - -
+
+## 応用例
+
+[ブリッジ](bridge/index.html)
 
 
 --></script>
@@ -1804,8 +1958,8 @@ stiffness | ばねの硬さ | *N / m* | 0 | 1.0
   name="chains/image.png"
   data-type="image/png"
   data-credits="[]"
-  data-last-modified="0"
-  
+  data-last-modified="1486625062529"
+  is-trashed
   
   type="hack"
 ><!--
@@ -1816,7 +1970,7 @@ iVBORw0KGgoAAAANSUhEUgAAAMoAAAHMCAYAAACUSzcBAAAMFWlDQ1BJQ0MgUHJvZmlsZQAASImVVwdY
   name="chains/index.html"
   data-type="text/html"
   data-credits="[]"
-  data-last-modified="0"
+  data-last-modified="1486625028418"
   
   
   type="hack"
@@ -1825,12 +1979,12 @@ iVBORw0KGgoAAAANSUhEUgAAAMoAAAHMCAYAAACUSzcBAAAMFWlDQ1BJQ0MgUHJvZmlsZQAASImVVwdY
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>チェーン</title>
+		<title>ロープ</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="chains/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -1838,7 +1992,67 @@ iVBORw0KGgoAAAANSUhEUgAAAMoAAAHMCAYAAACUSzcBAAAMFWlDQ1BJQ0MgUHJvZmlsZQAASImVVwdY
   name="chains/main.js"
   data-type="text/javascript"
   data-credits="[{&quot;label&quot;:&quot;Copyright (c) 2014 Liam Brummitt&quot;,&quot;url&quot;:&quot;http://brm.io/matter-js/&quot;,&quot;timestamp&quot;:1485562830829,&quot;hash&quot;:&quot;b4520c25fc7fd5cc0564feb25a3deb54&quot;}]"
-  data-last-modified="0"
+  data-last-modified="1486696019452"
+  
+  
+  type="hack"
+><!--
+import {
+	Body,
+	Composite,
+	Composites,
+	Constraint,
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+// ロープの中のオブジェクト同士がぶつからないようにするためのグループ
+const ropeGroup = Body.nextGroup(true);
+
+// ロープのオブジェクトのスタック
+const ropeA = Composites.stack(400, 100, 1, 8, 0, 10, (x, y) => {
+	return Bodies.rectangle(x, y, 20, 50, {
+		collisionFilter: {
+			group: ropeGroup,
+		},
+		
+	});
+});
+World.add(world, ropeA);
+
+// ロープをチェーンでつなぐ
+Composites.chain(ropeA, 0, 0.5, 0, -0.5, {
+	stiffness: 0.8,
+	
+});
+
+// 左のロープを空中に固定する
+Composite.add(ropeA, Constraint.create({
+	bodyB: ropeA.bodies[0],
+	pointB: {
+		x: 0,
+		y: -25
+	},
+	pointA: {
+		x: 400,
+		y: 100
+	},
+	stiffness: 0.5,
+}));
+
+
+--></script>
+<script
+  class="download_content"
+  name="chains/setting.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486699088449"
   
   
   type="hack"
@@ -1847,14 +2061,9 @@ import {
 	Engine,
 	Render,
 	Runner,
-	Body,
-	Composite,
-	Composites,
-	Constraint,
 	MouseConstraint,
 	Mouse,
 	World,
-	Bodies,
 } from 'matter';
 
 
@@ -1865,77 +2074,12 @@ import render from 'render';
 render.options.showAngleIndicator = true;
 render.options.showCollisions = true;
 render.options.showVelocity = true;
+render.options.background = '#aaaaaa';
 Render.run(render);
 
 const runner = Runner.create();
 Runner.run(runner, engine);
 
-
-// 左のロープ
-const groupA = Body.nextGroup(true);
-
-const ropeA = Composites.stack(200, 100, 4, 2, 10, 10, (x, y) => {
-	return Bodies.rectangle(x, y, 50, 20, {
-		collisionFilter: {
-			group: groupA
-		}
-	});
-});
-
-// 左のロープをチェーンでつなぐ
-Composites.chain(ropeA, 0.5, 0, -0.5, 0, {
-	stiffness: 0.8,
-	length: 2
-});
-
-// 左のロープを空中に固定する
-Composite.add(ropeA, Constraint.create({
-	bodyB: ropeA.bodies[0],
-	pointB: {
-		x: -25,
-		y: 0
-	},
-	pointA: {
-		x: 200,
-		y: 100
-	},
-	stiffness: 0.5
-}));
-
-World.add(world, ropeA);
-
-// 右のロープ
-const groupB = Body.nextGroup(true);
-
-const ropeB = Composites.stack(500, 100, 5, 2, 10, 10, (x, y) => {
-	return Bodies.circle(x, y, 20, {
-		collisionFilter: {
-			group: groupB
-		}
-	});
-});
-
-// 右のロープをチェーンでつなぐ
-Composites.chain(ropeB, 0.5, 0, -0.5, 0, {
-	stiffness: 0.8,
-	length: 2
-});
-
-// 右のロープを空中に固定する
-Composite.add(ropeB, Constraint.create({
-	bodyB: ropeB.bodies[0],
-	pointB: {
-		x: -20,
-		y: 0
-	},
-	pointA: {
-		x: 500,
-		y: 100
-	},
-	stiffness: 0.5
-}));
-
-World.add(world, ropeB);
 
 // マウス操作
 const mouse = Mouse.create(render.canvas);
@@ -1957,6 +2101,12 @@ render.mouse = mouse;
 
 feeles.openReadme('chains/README.md');
 
+
+export {
+	engine,
+	world,
+	render,
+};
 --></script>
 <script
   class="download_content"
@@ -2015,11 +2165,10 @@ chamfer | radius | 丸みの大きさ | 0 ~
 		<title>角丸 1</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="chamfer/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
-
 --></script>
 <script
   class="download_content"
@@ -2170,45 +2319,44 @@ World.add(world, [
   name="circleStack/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486429914525"
+  data-last-modified="1486623769446"
   
   
   type="hack"
 ><!--
 # 円のスタック
 
-
-`Composites.stack` を使うと、たくさんのオブジェクトを一気に作ることができるよ
-
-オブジェクトをまとめたものを、 Matter.js では **スタック** と呼ぶんだ
-
-
-## ![改造する](circleStack/main.js)
-
-
-## スタックのパラメータ
-Composites.stack( *x* ,  *y* ,  *column* ,  *row *,  *columnGap* , *rowGap* , *callback* );
-パラメータ | 意味 | 単位 | 最小 | 最大 
---- | --- | --- | --- | ---
-x | スタックの位置（横） | px | 0 | 800
-y | スタックの位置（縦） | px | 0 | 600 
-column | 列の数　（横） | 個 | 0 | 100 程度
-row | 行の数（縦） | 個 | 0 | 100 程度
-columnGap | 列の間かく | px | 0 | 800 
-rowGap | 行の間かく | px | 0 | 600
-callback | オブジェクトをつくる関数 | - | - | -
-
-> x を 400, y を 300 にすると、ちょうど真ん中になるよ
-
-### callback
-
-この関数がオブジェクトの数だけ使われることになる  
-`x`, `y` という数字が与えられるので、  
-その位置に応じたオブジェクトを作って *return* するんだ
-
+スタックを使って円のオブジェクトを一気に出してみた
 
 [メニューに戻る](index.html)
 
+
+## 改造してみる
+
+![ここから始める](circleStack/main.js)
+
+**Composites.stack(`1`, `2`, `3`, `4`, `5`, `6`, (x, y) => {  
+　　return Bodies.circle(x, y, `7`);  
+});**
+
+|| 意味 | はんい
+--- | --- | --- 
+1 | 左からのキョリ | 0 ~ 800
+2 | 上からのキョリ | 0 ~ 600
+3 | 右にいくつ出すか（横） | 0 ~ 
+4 | 下にいくつ出すか（タテ） | 0 ~ 
+5 | 列の間かく（横） | 0 ~ 
+6 | 行の間かく（タテ） | 0 ~ 
+7 | 円の半径 | 0 ~ 
+
+
+もっと改造
+![設定](circleStack/setting.js)
+![かべ・ゆか](circleStack/stage.js)
+
+- - -
+
+## 応用例
 
 
 --></script>
@@ -2229,45 +2377,58 @@ callback | オブジェクトをつくる関数 | - | - | -
 		<title>円のスタック</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="circleStack/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 --></script>
 <script
   class="download_content"
   name="circleStack/main.js"
   data-type="text/javascript"
   data-credits="[{&quot;label&quot;:&quot;Copyright (c) 2014 Liam Brummitt&quot;,&quot;url&quot;:&quot;http://brm.io/matter-js/&quot;,&quot;timestamp&quot;:1485562830829,&quot;hash&quot;:&quot;9236bae4c335cc6c3bc132b71e427e1e&quot;}]"
-  data-last-modified="0"
+  data-last-modified="1486624065536"
+  
+  
+  type="hack"
+><!--
+import {
+	World,
+	Bodies,
+	Composites,
+	
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+World.add(world, [
+	
+	// 円のスタック
+	Composites.stack(100, 185, 10, 10, 20, 0, (x, y) => {
+		return Bodies.circle(x, y, 20);
+	}),
+	
+]);
+
+
+
+
+
+
+
+
+import './stage';
+
+--></script>
+<script
+  class="download_content"
+  name="circleStack/setting.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486624046418"
   
   
   type="hack"
@@ -2280,42 +2441,18 @@ import {
 	MouseConstraint,
 	Mouse,
 	World,
-	Bodies,
 } from 'matter';
-
 
 
 import engine from 'engine';
 const world = engine.world;
 
 import render from 'render';
-render.options.showAngleIndicator = true;
 Render.run(render);
 
 const runner = Runner.create();
 Runner.run(runner, engine);
 
-// 円のスタック
-const stack = Composites.stack(100, 185, 10, 10, 20, 0, (x, y) => {
-	return Bodies.circle(x, y, 20);
-});
-
-World.add(world, [
-	stack,
-	// 壁
-	Bodies.rectangle(400, 0, 800, 50, {
-		isStatic: true
-	}),
-	Bodies.rectangle(400, 600, 800, 50, {
-		isStatic: true
-	}),
-	Bodies.rectangle(800, 300, 50, 600, {
-		isStatic: true
-	}),
-	Bodies.rectangle(0, 300, 50, 600, {
-		isStatic: true
-	}),
-]);
 
 // マウス操作
 const mouse = Mouse.create(render.canvas);
@@ -2337,13 +2474,57 @@ render.mouse = mouse;
 
 feeles.openReadme('circleStack/README.md');
 
+
+export {
+	engine,
+	world,
+	render,
+};
+
+--></script>
+<script
+  class="download_content"
+  name="circleStack/stage.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486623918170"
+  
+  
+  type="hack"
+><!--
+import {
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+World.add(world, [
+	// 壁
+	Bodies.rectangle(400, 0, 800, 50, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(400, 600, 800, 50, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(800, 300, 50, 600, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(0, 300, 50, 600, {
+		isStatic: true,
+	}),
+]);
+
 --></script>
 <script
   class="download_content"
   name="cloth/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486430850079"
+  data-last-modified="1486626858900"
   
   
   type="hack"
@@ -2367,7 +2548,11 @@ isStatic | 静止するかどうか | フラグ | false | true
 
 [メニューに戻る](index.html)
 
+- - -
 
+## 必要なもの
+
+[ソフトボディ](softBody/index.html)
 
 --></script>
 <script
@@ -2387,9 +2572,9 @@ isStatic | 静止するかどうか | フラグ | false | true
 		<title>布</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="cloth/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -2483,6 +2668,424 @@ feeles.openReadme('cloth/README.md');
 --></script>
 <script
   class="download_content"
+  name="coins/README.MD"
+  data-type="text/x-markdown"
+  data-credits="[]"
+  data-last-modified="0"
+  
+  
+  type="hack"
+><!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--></script>
+<script
+  class="download_content"
+  name="coins/README.md"
+  data-type="text/x-markdown"
+  data-credits="[]"
+  data-last-modified="1486710852773"
+  
+  
+  type="hack"
+><!--
+# コインゲーム
+
+コインゲーム作ってみた　
+
+[メニューに戻る](index.html)
+
+
+
+## どうやって作ってるの？
+
+これらを組み合わせてゲームにしているよ  
+> クリックするとサンプルに移動します
+
+バーを動かすには…[イベント](events/index.html)  
+コインセンサーは…[センサー](sensors/index.html)  
+
+## 改造に挑戦してみる
+
+![動く台](coins/main.js)  
+![コインセンサー](coins/sensor.js)  
+![ステージ](coins/stage.js)  
+![設定](coins/setting.js)
+
+--></script>
+<script
+  class="download_content"
+  name="coins/REAMDE.md"
+  data-type="text/x-markdown"
+  data-credits="[]"
+  data-last-modified="1486704331663"
+  is-trashed
+  
+  type="hack"
+><!--
+# コインゲーム
+
+コインゲーム作ってみた　
+
+[メニューに戻る](index.html)
+
+
+## どうやって作ってるの？
+
+これらを組み合わせてゲームにしているよ  
+> クリックするとサンプルに移動します
+
+重さを変えるには…[おもさ](density/index.html)  
+山を作るには…[ピラミッド](pyramid/index.html)  
+岩を放つには…[イベント](events/index.html)  
+
+## 改造に挑戦してみる
+
+![動く台とコインセンサー](coins/main.js)  
+![ステージ](coins/stage.js)  
+![設定](coins/setting.js)
+
+--></script>
+<script
+  class="download_content"
+  name="coins/index.html"
+  data-type="text/html"
+  data-credits="[]"
+  data-last-modified="1486703611004"
+  
+  
+  type="hack"
+><!--
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>コインゲーム</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="coins/main.js"></script>
+</head>
+<body>
+</body>
+</html>
+--></script>
+<script
+  class="download_content"
+  name="coins/main.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486710425190"
+  
+  
+  type="hack"
+><!--
+import {
+	Body,
+	Events,
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	engine,
+	world,
+} from './setting';
+
+
+// コインを運ぶバー
+const bar1 = Bodies.rectangle(700, 350, 250, 50, {
+	// 固定する
+	isStatic: true,
+	
+});
+
+World.add(world, [
+	
+	// コインを運ぶバー
+	bar1,
+	
+	// バーの上のストッパー
+	Bodies.rectangle(750, 300, 70, 50, {
+		// 固定する
+		isStatic: true,
+
+	}),
+	
+]);
+
+Events.on(engine, 'beforeUpdate', (event) => {
+	
+	// 始まってからの経過時間(秒)
+	const time = event.timestamp / 1000;
+
+	// バーを左右に動かす
+	const px = 700 + 150 * Math.sin(time - 1);
+	Body.setVelocity(bar1, {
+		x: px - bar1.position.x,
+		y: 0
+	});
+	Body.setPosition(bar1, {
+		x: px,
+		y: bar1.position.y
+	});
+	
+});
+
+
+import './stage';
+import './sensor';
+
+--></script>
+<script
+  class="download_content"
+  name="coins/sensor.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486709055006"
+  
+  
+  type="hack"
+><!--
+import {
+	Composites,
+	Body,
+	Events,
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	engine,
+	world,
+} from './setting';
+
+
+// センサーのオブジェクトをつくる
+const sensor = Bodies.rectangle(740, 400, 60, 20, {
+	isSensor: true,
+	isStatic: true,
+	render: {
+		strokeStyle: '#FFFF00',
+		fillStyle: 'transparent',
+		lineWidth: 1
+	}
+});
+
+
+World.add(world, [
+
+	// センサーのオブジェクト
+	sensor,
+
+	// さいしょのコイン
+	Bodies.rectangle(750, 350, 50, 10, {
+		chamfer: {
+			radius: 4,
+		},
+		render: {
+			fillStyle: '#FFFF00',
+			strokeStyle: '#000000',
+			lineWidth: 1,
+		},
+		// ツルツルにする
+		slop: 0.005,
+		friction: 0.01,
+		frictionStatic: 10,
+		restitution: 0.3,
+		// タテにする
+		angle: 1.57,
+
+	}),
+
+]);
+
+
+
+Events.on(engine, 'collisionStart', function(event) {
+	// しょう突が始まったら、ここに入る
+
+	for (const pair of event.pairs) {
+		if (pair.bodyA === sensor || pair.bodyB === sensor) {
+			// センサーとぶつかったら、ここに入る
+
+			World.add(world, [
+
+				// コインのオブジェクトのスタック
+				Composites.stack(50, 300, 2, 5, 0, 0, (x, y) => {
+					return Bodies.rectangle(x, y, 50, 10, {
+						chamfer: {
+							radius: 4,
+						},
+						render: {
+							fillStyle: '#FFFF00',
+							strokeStyle: '#000000',
+							lineWidth: 1,
+						},
+						slop: 0.005,
+						friction: 0.01,
+						frictionStatic: 10,
+						restitution: 0.3,
+						restitution: 0.3,
+
+					});
+				}),
+
+			]);
+
+		}
+	}
+
+});
+
+--></script>
+<script
+  class="download_content"
+  name="coins/setting.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486706632647"
+  
+  
+  type="hack"
+><!--
+import {
+	Render,
+	Runner,
+	MouseConstraint,
+	Mouse,
+	World,
+} from 'matter';
+
+
+import engine from 'engine';
+const world = engine.world;
+
+import render from 'render';
+Render.run(render);
+
+const runner = Runner.create();
+Runner.run(runner, engine);
+
+
+// マウス操作
+const mouse = Mouse.create(render.canvas);
+const mouseConstraint = MouseConstraint.create(engine, {
+	mouse: mouse,
+	constraint: {
+		stiffness: 0.2,
+		render: {
+			visible: false
+		}
+	}
+});
+
+World.add(world, mouseConstraint);
+
+// keep the mouse in sync with rendering
+render.mouse = mouse;
+
+
+feeles.openReadme('coins/README.md');
+
+
+export {
+	engine,
+	world,
+	render,
+};
+
+--></script>
+<script
+  class="download_content"
+  name="coins/stage.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486708502456"
+  
+  
+  type="hack"
+><!--
+import {
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+World.add(world, [
+	// かべのオブジェクト
+	Bodies.rectangle(400, 0, 800, 50, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(400, 600, 800, 80, {
+		isStatic: true,
+		angle: -0.05,
+	}),
+	Bodies.rectangle(800, 300, 50, 600, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(0, 300, 50, 600, {
+		isStatic: true,
+	}),
+	
+	// バーの下の土台
+	Bodies.rectangle(450, 400, 520, 50, {
+		isStatic: true,
+		chamfer: true,
+	}),
+	Bodies.rectangle(180, 450, 150, 50, {
+		isStatic: true,
+		chamfer: true,
+		angle: -1.2,
+	}),
+	
+	// レーン
+	Bodies.rectangle(270, 180, 350, 20, {
+		isStatic: true,
+		chamfer: true,
+		angle: 0.5,
+		friction: 0,
+	}),
+	Bodies.rectangle(130, 190, 20, 200, {
+		isStatic: true,
+		chamfer: true,
+	}),
+	
+]);
+
+--></script>
+<script
+  class="download_content"
   name="collisionFiltering/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
@@ -2557,9 +3160,9 @@ lineWidth | 線の太さ | px | 0 | Infinity
 		<title>カテゴリーごとのしょう突</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="collisionFiltering/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -2776,9 +3379,9 @@ centerY | 拡大の中心（ 0 ならスタックの上端） | px
 		<title>スタック全体の操作</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="compositeManipulation/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -2889,38 +3492,45 @@ feeles.openReadme('compositeManipulation/README.md');
   name="compound/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486428703551"
+  data-last-modified="1486630158493"
   
   
   type="hack"
 ><!--
 # オブジェクトの合成
 
-`Body.create` を使うと、いくつかのオブジェクトを合成して  
-ひとつのオブジェクトのようにすることができるよ
-
-
-## ![改造する](compound/main.js)
-
-
-### Body.create({ parts: `parts` })
-
-パラメータ | 意味 | 単位 | 最小 | 最大 
---- | --- | --- | --- | ---
-parts | 合成するパーツ | オブジェクトの配列 |  | 
-
-
-## 配列
-
-`[ ]` を使って表されるデータのことを配列（はいれつ）と呼ぶよ  
-配列には `,` (カンマ) 区切りでどんなデータでも入れられるんだ
-
-`[1, 8, 3]` のように数字が入っていると **数字の配列**,  
-`['apple', 'pen']` のように文字列が入っていると **文字列の配列**,  
-という風に中身のデータの種類によって呼び分けることもあるよ
+オブジェクトを合成してみた
 
 [メニューに戻る](index.html)
 
+
+## 改造してみる
+
+![ここから始める](compound/main.js)
+
+**Body.create({  
+　　parts: [  
+　　　　`1`,  
+　　　　`2`,  
+　　　　`...`,  
+　　],  
+　});**
+
+|| 意味 | はんい
+--- | --- | --- 
+1 | オブジェクト | なし
+2 | オブジェクト | なし
+... | オブジェクト | なし
+
+
+もっと改造
+![設定](compound/setting.js)
+![かべ・ゆか](compound/stage.js)
+
+
+- - -
+
+## 応用例
 
 
 --></script>
@@ -2941,9 +3551,9 @@ parts | 合成するパーツ | オブジェクトの配列 |  |
 		<title>オブジェクトの合成</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="compound/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -2951,7 +3561,89 @@ parts | 合成するパーツ | オブジェクトの配列 |  |
   name="compound/main.js"
   data-type="text/javascript"
   data-credits="[{&quot;label&quot;:&quot;Copyright (c) 2014 Liam Brummitt&quot;,&quot;url&quot;:&quot;http://brm.io/matter-js/&quot;,&quot;timestamp&quot;:1485562830829,&quot;hash&quot;:&quot;f4f2d344a2fd74e35168a390294dd5bb&quot;}]"
-  data-last-modified="0"
+  data-last-modified="1486630197429"
+  
+  
+  type="hack"
+><!--
+import {
+	Body,
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+
+// 横棒
+const partA = Bodies.rectangle(200, 300, 200, 40);
+// タテ棒
+const partB = Bodies.rectangle(200, 300, 40, 200, {
+	// 横棒 と色を同じにする
+	render: partA.render,
+	
+});
+
+// partA と partB を合成
+const partAB = Body.create({
+	parts: [
+		partA, 
+		partB,
+		
+	]
+});
+
+World.add(world, [
+	// ＋ のオブジェクト
+	partAB,
+	
+]);
+
+
+// 上の点
+const part1 = Bodies.circle(600, 220, 30);
+// 横棒
+const part2 = Bodies.rectangle(600, 300, 200, 40, {
+	// 上の点 と色を同じにする
+	render: part1.render,
+	
+});
+// 下の点
+const part3 = Bodies.circle(600, 380, 30, {
+	// 上の点 と色を同じにする
+	render: part1.render,
+	
+});
+
+// partC と partD と partE を合成
+const part123 = Body.create({
+	parts: [
+		part1, 
+		part2,
+		part3,
+		
+	]
+});
+
+World.add(world, [
+	// ÷ のオブジェクト
+	part123,
+	
+]);
+
+
+import './stage';
+
+--></script>
+<script
+  class="download_content"
+  name="compound/setting.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486629404422"
   
   
   type="hack"
@@ -2960,12 +3652,9 @@ import {
 	Engine,
 	Render,
 	Runner,
-	Body,
-	Constraint,
 	MouseConstraint,
 	Mouse,
 	World,
-	Bodies,
 } from 'matter';
 
 
@@ -2981,57 +3670,6 @@ Render.run(render);
 const runner = Runner.create();
 Runner.run(runner, engine);
 
-// ＋ の形をしたオブジェクト
-const sizeAB = 200;
-const xAB = 200;
-const yAB = 200;
-const partA = Bodies.rectangle(xAB, yAB, sizeAB, sizeAB / 5);
-const partB = Bodies.rectangle(xAB, yAB, sizeAB / 5, sizeAB, {
-	// partA と色を同じにする
-	render: partA.render
-});
-
-// partA と partB を合成
-const compoundBodyAB = Body.create({
-	parts: [partA, partB]
-});
-
-// ４つの円からなる振り子のオブジェクト
-const sizeCF = 150;
-const xCF = 400;
-const yCF = 300;
-
-const partC = Bodies.circle(xCF, yCF, 30);
-const partD = Bodies.circle(xCF + sizeCF, yCF, 30);
-const partE = Bodies.circle(xCF + sizeCF, yCF + sizeCF, 30);
-const partF = Bodies.circle(xCF, yCF + sizeCF, 30);
-
-// partC と partD と partE と partF を合成
-const compoundBodyCF = Body.create({
-	parts: [partC, partD, partE, partF]
-});
-
-// 振り子を空中の点に固定する
-const constraint = Constraint.create({
-	pointA: {
-		x: 400,
-		y: 100
-	},
-	bodyB: compoundBodyCF,
-	pointB: {
-		x: 0,
-		y: -50
-	}
-});
-
-World.add(world, [
-	compoundBodyAB,
-	compoundBodyCF,
-	constraint,
-	Bodies.rectangle(400, 600, 800, 50.5, {
-		isStatic: true
-	})
-]);
 
 // マウス操作
 const mouse = Mouse.create(render.canvas);
@@ -3053,31 +3691,74 @@ render.mouse = mouse;
 
 feeles.openReadme('compound/README.md');
 
+
+export {
+	engine,
+	world,
+	render,
+};
+
+--></script>
+<script
+  class="download_content"
+  name="compound/stage.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486629469043"
+  
+  
+  type="hack"
+><!--
+import {
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+World.add(world, [
+	// かべのオブジェクト
+	Bodies.rectangle(400, 0, 800, 50, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(400, 600, 800, 50, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(800, 300, 50, 600, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(0, 300, 50, 600, {
+		isStatic: true,
+	}),
+	
+]);
+
 --></script>
 <script
   class="download_content"
   name="compoundStack/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486429945872"
+  data-last-modified="1486630391113"
   
   
   type="hack"
 ><!--
 # 合成したオブジェクトのスタック
 
-
-合成したオブジェクトを、さらにスタックにもすることができるよ  
-
-詳しくは [オブジェクトの合成](compound/index.html) と [スタック](stack/index.html) を  
-を実行したり、説明を読んでみてね
-
-
-## ![改造する](compoundStack/main.js)
-
+合成したオブジェクトを一気に出してみた
 
 [メニューに戻る](index.html)
 
+## 改造してみる
+
+![ここから始める](compoundStack/main.js)
+
+もっと改造
+![設定](compoundStack/setting.js)
+![かべ・ゆか](compoundStack/stage.js)
 
 
 --></script>
@@ -3098,9 +3779,9 @@ feeles.openReadme('compound/README.md');
 		<title>合成したオブジェクトのスタック</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="compoundStack/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -3108,7 +3789,59 @@ feeles.openReadme('compound/README.md');
   name="compoundStack/main.js"
   data-type="text/javascript"
   data-credits="[{&quot;label&quot;:&quot;Copyright (c) 2014 Liam Brummitt&quot;,&quot;url&quot;:&quot;http://brm.io/matter-js/&quot;,&quot;timestamp&quot;:1485562830830,&quot;hash&quot;:&quot;ccfd443f31d256308bfd26d26330c2f1&quot;}]"
-  data-last-modified="0"
+  data-last-modified="1486630606541"
+  
+  
+  type="hack"
+><!--
+import {
+	Body,
+	Composites,
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+// 合成したオブジェクトのスタック
+const stack = Composites.stack(100, 280, 12, 6, 0, 0, (x, y) => {
+	// 横棒
+	const partA = Bodies.rectangle(x, y, 50, 10);
+	// タテ棒
+	const partB = Bodies.rectangle(x, y, 10, 50, {
+		// 横棒と見た目を同じにする
+		render: partA.render,
+		
+	});
+	
+	// 合成されたオブジェクトのひとつ
+	return Body.create({
+		parts: [
+			partA, 
+			partB,
+		]
+	});
+});
+
+World.add(world, [
+	// スタック
+	stack,
+	
+]);
+
+
+import './stage';
+
+--></script>
+<script
+  class="download_content"
+  name="compoundStack/setting.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486630445494"
   
   
   type="hack"
@@ -3117,12 +3850,9 @@ import {
 	Engine,
 	Render,
 	Runner,
-	Body,
-	Composites,
 	MouseConstraint,
 	Mouse,
 	World,
-	Bodies,
 } from 'matter';
 
 
@@ -3136,41 +3866,6 @@ Render.run(render);
 const runner = Runner.create();
 Runner.run(runner, engine);
 
-
-const size = 50;
-
-// 合成したオブジェクトのスタック
-const stack = Composites.stack(100, 280, 12, 6, 0, 0, (x, y) => {
-	// 横棒
-	const partA = Bodies.rectangle(x, y, size, size / 5);
-	// 縦棒
-	const partB = Bodies.rectangle(x, y, size / 5, size, {
-		// 横棒と見た目を同じにする
-		render: partA.render
-	});
-
-	// 合成されたオブジェクトのひとつ
-	return Body.create({
-		parts: [partA, partB]
-	});
-});
-
-World.add(world, [
-	stack,
-	// 壁
-	Bodies.rectangle(400, 0, 800, 50, {
-		isStatic: true
-	}),
-	Bodies.rectangle(800, 300, 50, 600, {
-		isStatic: true
-	}),
-	Bodies.rectangle(0, 300, 50, 600, {
-		isStatic: true
-	}),
-	Bodies.rectangle(400, 609, 800, 50, {
-		isStatic: true
-	})
-]);
 
 // マウス操作
 const mouse = Mouse.create(render.canvas);
@@ -3191,6 +3886,50 @@ render.mouse = mouse;
 
 
 feeles.openReadme('compoundStack/README.md');
+
+
+export {
+	engine,
+	world,
+	render,
+};
+
+--></script>
+<script
+  class="download_content"
+  name="compoundStack/stage.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486630467420"
+  
+  
+  type="hack"
+><!--
+import {
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+World.add(world, [
+	// かべのオブジェクト
+	Bodies.rectangle(400, 0, 800, 50, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(400, 600, 800, 50, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(800, 300, 50, 600, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(0, 300, 50, 600, {
+		isStatic: true,
+	}),
+	
+]);
 
 --></script>
 <script
@@ -3272,9 +4011,9 @@ lineWidth | 線の太さ | px | 0 | Infinity
 		<title>好きな形のオブジェクト</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="concave/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -3370,10 +4109,193 @@ feeles.openReadme('concave/README.md');
 --></script>
 <script
   class="download_content"
+  name="constraint/README.md"
+  data-type="text/x-markdown"
+  data-credits="[]"
+  data-last-modified="1486703110597"
+  
+  
+  type="hack"
+><!--
+# バネ
+
+バネっぽい動きを作ってみた
+
+[メニューに戻る](index.html)
+
+
+## 改造してみる
+
+![ここから始める](constraint/main.js)
+
+**Constraint.create({  
+　　bodyA: `1`,  
+　　pointB: {  
+　　　　x: `2`,  
+　　　　y: `3`,  
+　　},  
+　　stiffness: `4`,  
+});**
+
+|| 意味 | はんい
+--- | --- | --- 
+1 | オブジェクト | なし
+2 | 左からのキョリ | 0 ~ 800
+3 | 上からのキョリ | 0 ~ 600
+4 | バネの強さ | 0 ~ 1.0
+
+
+もっと改造
+![設定](constraint/setting.js)
+
+## コラム 「フックの法則」
+
+フックの法則によると バネ が元に戻ろうとする力は、  
+バネが伸びた長さに、ある定数をかけたものなんだ  
+伸びた長さが倍になれば、戻ろうとする力も倍になるんだね
+
+ある定数のことを **バネ定数** と言って、  
+パラメータでは `stiffness` のことだよ
+
+- - -
+
+## 応用例
+
+[スリングショット](slingshot/index.html)
+[モンケーン](wreckingBall/index.html)
+[ブリッジ](bridge/index.html)
+[発射台](catapult/index.html)
+
+--></script>
+<script
+  class="download_content"
+  name="constraint/index.html"
+  data-type="text/html"
+  data-credits="[]"
+  data-last-modified="1486645158396"
+  
+  
+  type="hack"
+><!--
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>バネ</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="constraint/main.js"></script>
+</head>
+<body>
+</body>
+</html>
+--></script>
+<script
+  class="download_content"
+  name="constraint/setting.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486646020975"
+  
+  
+  type="hack"
+><!--
+import {
+	Render,
+	Runner,
+	MouseConstraint,
+	Mouse,
+	World,
+} from 'matter';
+
+
+import engine from 'engine';
+const world = engine.world;
+
+import render from 'render';
+render.options.showAxes = true;
+render.options.background = '#000000';
+Render.run(render);
+
+const runner = Runner.create();
+Runner.run(runner, engine);
+
+
+// マウス操作
+const mouse = Mouse.create(render.canvas);
+const mouseConstraint = MouseConstraint.create(engine, {
+	mouse: mouse,
+	constraint: {
+		stiffness: 0.2,
+		render: {
+			visible: false
+		}
+	}
+});
+
+World.add(world, mouseConstraint);
+
+// keep the mouse in sync with rendering
+render.mouse = mouse;
+
+
+feeles.openReadme('constraint/README.md');
+
+
+export {
+	engine,
+	world,
+	render,
+};
+
+--></script>
+<script
+  class="download_content"
+  name="constraint/stage.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486645521775"
+  is-trashed
+  
+  type="hack"
+><!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--></script>
+<script
+  class="download_content"
   name="density/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486546649954"
+  data-last-modified="1486703087452"
   
   
   type="hack"
@@ -3403,6 +4325,10 @@ density | おもさのみつ度 | 0 ~
 
 ## 応用例
 
+[スリングショット](slingshot/index.html)  
+[モンケーン](wreckingBall/index.html)  
+[発射台](catapult/index.html)  
+
 --></script>
 <script
   class="download_content"
@@ -3421,9 +4347,9 @@ density | おもさのみつ度 | 0 ~
 		<title>おもさ</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="density/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -3431,7 +4357,7 @@ density | おもさのみつ度 | 0 ~
   name="density/main.js"
   data-type="text/javascript"
   data-credits="[]"
-  data-last-modified="1486550618310"
+  data-last-modified="1486716296196"
   
   
   type="hack"
@@ -3451,7 +4377,7 @@ World.add(world, [
 	// かるいオブジェクト
 	Bodies.rectangle(300, 430, 30, 500, {
 		// みつ度（おもさ）
-		density: 1,
+		density: 100,
 		// 少しだけ傾ける
 		angle: 0.1,
 		
@@ -3628,7 +4554,7 @@ export default {
   name="events/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486428684002"
+  data-last-modified="1486632426110"
   
   
   type="hack"
@@ -3674,6 +4600,12 @@ mouseConstraint | enddrag | マウスがドラッグを終えたとき
 [メニューに戻る](index.html)
 
 
+- - -
+
+## 応用例
+
+[スリングショット](slingshot/index.html)
+
 
 --></script>
 <script
@@ -3693,9 +4625,9 @@ mouseConstraint | enddrag | マウスがドラッグを終えたとき
 		<title>イベント</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="events/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -4045,122 +4977,6 @@ export default Assets;
 --></script>
 <script
   class="download_content"
-  name="free/README.md"
-  data-type="text/x-markdown"
-  data-credits="[]"
-  data-last-modified="1486431485360"
-  
-  
-  type="hack"
-><!--
-# 自由コーナー
-
-
-ここでは君の作りたいものをゼロから作り始めることができるよ  
-思う存分、研究を楽しもう！！
-
-
-## アセット
-
-このカードの下にはアセットのカードが出ているんだ  
-きれいに並んでいる正方形の白い紙のことだよ
-
-アセットは、コードまでマウスで引っ張って使うよ  
-*FREE SPACE* と書いてある部分よりも下なら、どこにでも置いていいんだ
-
-置き終わったら、 **プレイ** を押して結果を見てみよう  
-もちろん、コードを自分で入力してもいいよ
-
-## アセットをつくる
-
-自分でアセットを作ってみたくなった？  
-では、 ![アセットの設定ファイル](snippets/object.json)
-を書きかえてみてね
-
-かなり上級者向けだけど、他の人たちがアセットを使ってくれたら、嬉しいね！
-
-
-[メニューに戻る](index.html)
-
-
-
---></script>
-<script
-  class="download_content"
-  name="free/index.html"
-  data-type="text/html"
-  data-credits="[]"
-  data-last-modified="0"
-  
-  
-  type="hack"
-><!--
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>.自由コーナー</title>
-		<link rel="stylesheet" href="style.css" />
-		<script src="free/main.js"></script>
-	</head>
-	<body>
-
-	</body>
-</html>
---></script>
-<script
-  class="download_content"
-  name="free/main.js"
-  data-type="text/javascript"
-  data-credits="[]"
-  data-last-modified="0"
-  
-  
-  type="hack"
-><!--
-import {
-	World,
-	Bodies,
-	Render,
-	Engine,
-	
-} from 'matter';
-import engine from 'engine';
-import render from 'render';
-const world = engine.world;
-
-/* ----==== FREE SPACE ====---- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Engine.run(engine);
-Render.run(render);
-
-
-feeles.openReadme('free/README.md');
-
-
---></script>
-<script
-  class="download_content"
   name="friction/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
@@ -4219,9 +5035,9 @@ friction | まさつの大きさ | 0 ~ 1.0
 		<title>摩擦力</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="friction/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -4435,48 +5251,10 @@ world.gravity.y | 下向きの重力
 		<title>重力</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="gravity/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
---></script>
-<script
-  class="download_content"
-  name="gravity/main.js"
-  data-type="text/javascript"
-  data-credits="[{&quot;label&quot;:&quot;Copyright (c) 2014 Liam Brummitt&quot;,&quot;url&quot;:&quot;http://brm.io/matter-js/&quot;,&quot;timestamp&quot;:1485562830830,&quot;hash&quot;:&quot;1e9632886ce4de646517fc132779e900&quot;}]"
-  data-last-modified="1486606644397"
-  
-  
-  type="hack"
-><!--
-import {
-	World,
-	Bodies,
-} from 'matter';
-
-import {
-	world,
-} from './setting';
-
-
-// 重力
-world.gravity.x = 0;
-world.gravity.y = -1;
-
-
-
-
-
-
-
-
-
-
-
-import './stage';
-import './stack';
-
 --></script>
 <script
   class="download_content"
@@ -4663,9 +5441,9 @@ World.add(world, [
 		<title>ジャイロセンサー</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="gyro/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -4795,109 +5573,10 @@ feeles.openReadme('gyro/README.md');
 --></script>
 <script
   class="download_content"
-  name="index.html"
-  data-type="text/html"
-  data-credits="[]"
-  data-last-modified="1486607187924"
-  
-  
-  type="hack"
-><!--
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>.メニュー</title>
-		<style>
-			html { 
-				background-color: #FFFFFF; 
-				max-height: 600px;
-				min-width: 400px;
-			}
-			a.btn {
-				display: inline-block;
-				background-color: #3399FF;
-				color: #FFFFFF;
-				text-decoration: none;
-				margin: 4px;
-				padding: 4px;
-				border-radius: 2px;
-				white-space: nowrap;
-				transform: rotate(-4deg);
-			}
-		</style>
-		<script type="text/javascript" src="main.js"></script>
-	</head>
-	<body>
-		--><!-- Examples --><!--
-		<h2>Menu</h2>
-		<h3>動くコンテンツ🎮</h3>
-		<a class="btn" href="slingshot/index.html">スリングショット</a>
-		<a class="btn" href="wreckingBall/index.html">モンケーン</a>
-		<a class="btn" href="bridge/index.html">ブリッジ</a>
-		<a class="btn" href="ballPool/index.html">ボールプール</a>
-		<a class="btn" href="catapult/index.html">発射台</a>
-		<a class="btn" href="cloth/index.html">布</a>
-		<a class="btn" href="avalanche/index.html">坂道</a>
-		<a class="btn" href="sprites/index.html">ビーチボールと木の箱</a>
-		<a class="btn" href="mixed/index.html">ミックス</a>
-		<a class="btn" href="timescale/index.html">スローモーション</a>
-		<a class="btn" href="staticFriction/index.html">静止まさつ力</a>
-		<a class="btn" href="free/index.html">自由コーナー</a>
-		<h3>きほんのパラメータ🔰</h3>
-		<a class="btn" href="rectangle/index.html">位置と大きさ</a>
-		<a class="btn" href="isStatic/index.html">かべ・ゆか</a>
-		<a class="btn" href="angle/index.html">かたむき</a>
-		<a class="btn" href="density/index.html">重さ</a>
-		<a class="btn" href="restitution/index.html">はね返り</a>
-		<a class="btn" href="airFriction/index.html">空気ていこう</a>
-		<a class="btn" href="friction/index.html">まさつ力</a>
-		<a class="btn" href="render/index.html">色</a>
-		<a class="btn" href="chamfer/index.html">角丸 1</a>
-		<a class="btn" href="rounded/index.html">角丸 2</a>
-		<a class="btn" href="timescaleSimple/index.html">時間の早さ</a>
-		<a class="btn" href="gravity/index.html">重力</a>
-		<h3>オブジェクトを組み合わせる⚡️</h3>
-		<a class="btn" href="stack/index.html">スタック</a>
-		<a class="btn" href="circleStack/index.html">円のスタック</a>
-		<a class="btn" href="chains/index.html">チェーン</a>
-		<a class="btn" href="softBody/index.html">ソフトボディ</a>
-		<a class="btn" href="pyramid/index.html">ピラミッド</a>
-		<a class="btn" href="car/index.html">車</a>
-		<a class="btn" href="newtonsCradle/index.html">ニュートンのゆりかご</a>
-		<a class="btn" href="compound/index.html">オブジェクトの合成</a>
-		<a class="btn" href="compoundStack/index.html">合成したオブジェクトのスタック</a>
-		<h3>ハイレベル💋</h3>
-		<a class="btn" href="events/index.html">イベント</a>
-		<a class="btn" href="sensors/index.html">センサー</a>
-		<a class="btn" href="manipulation/index.html">オブジェクトを直接操作する</a>
-		<a class="btn" href="compositeManipulation/index.html">スタック全体の操作</a>
-		<a class="btn" href="collisionFiltering/index.html">カテゴリーごとのしょう突</a>
-		<a class="btn" href="concave/index.html">好きな形のオブジェクト</a>
-		<a class="btn" href="raycasting/index.html">線分とのしょうとつ</a>
-		<a class="btn" href="views/index.html">ズームとスクロール</a>
-		<a class="btn" href="attractors/index.html">万有引力</a>
-		<h3>コラム🎤</h3>
-		<a class="btn" href="broadphase/index.html">ブロードフェーズ</a>
-		<a class="btn" href="sleeping/index.html">スリープモード</a>
-		<a class="btn" href="svg/index.html">ベクタ画像</a>
-		<a class="btn" href="terrain/index.html">地形</a>
-		<a class="btn" href="gyro/index.html">ジャイロセンサー</a>
-		<a class="btn" href="stress/index.html">圧力 1</a>
-		<a class="btn" href="stress2/index.html">圧力 2</a>
-		<hr>
-		これらのサンプルは Liam Brummitt 氏の
-		<a class="btn" href="http://brm.io/matter-js/demo/">原作</a>
-		をもとに改変したものです
-	</body>
-</html>
---></script>
-<script
-  class="download_content"
   name="isStatic/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486543462989"
+  data-last-modified="1486703159276"
   
   
   type="hack"
@@ -4926,6 +5605,8 @@ isStatic | 静止するかどうか | `true` なら静止 `false` なら動く
 
 ## 応用例
 
+[発射台](catapult/index.html)
+
 --></script>
 <script
   class="download_content"
@@ -4944,9 +5625,9 @@ isStatic | 静止するかどうか | `true` なら静止 `false` なら動く
 		<title>かべ・ゆか</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="isStatic/main.js"></script>
-	</head>
-	<body>
-	</body>
+</head>
+<body>
+</body>
 </html>
 --></script>
 <script
@@ -19183,7 +19864,7 @@ feeles.openReadme('mixed/README.md');
   name="newtonsCradle/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486429015263"
+  data-last-modified="1486628635324"
   
   
   type="hack"
@@ -19191,27 +19872,26 @@ feeles.openReadme('mixed/README.md');
 # ニュートンのゆりかご
 
 [ニュートンのゆりかご](https://ja.wikipedia.org/wiki/%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%88%E3%83%B3%E3%81%AE%E3%82%86%E3%82%8A%E3%81%8B%E3%81%94)
-を、 Matter.js で再現してみたよ
-
-一番左の円だけでなく、ふたつ同時に動かしてみたら、どうなるかな？
-
-
-## ![改造する](newtonsCradle/main.js)
-
-
-### Composites.newtonsCradle(`x`, `y`, `num`, `radius`, `length`)
-ニュートンのゆりかごを作る
-パラメータ | 意味 | 単位 | 最小 | 最大 
---- | --- | --- | --- | ---
-x | ゆりかごの位置（横） | px | 0 | 800
-y | ゆりかごの位置（縦） | px | 0 | 600 
-num | 円の数 | 個 | 0 | 100 程度 
-radius | 円の半径 | px | 0 |  
-length | ひもの長さ | px | 0 |  
-
+作ってみた
 
 [メニューに戻る](index.html)
 
+
+## 改造してみる
+
+![ここから始める](newtonsCradle/main.js)
+
+**Composites.newtonsCradle(`1`, `2`, `3`, `4`, `5`)**
+| | 意味 | はんい
+--- | --- | --- 
+1 | 左からのキョリ | 0 ~ 800
+2 | 上からのキョリ | 0 ~ 600 
+3 | 円の数 | 0 ~
+4 | 円の半径 | 0 ~  
+5 | ひもの長さ | 0 ~  
+
+もっと改造
+![設定](newtonsCradle/setting.js)
 
 
 --></script>
@@ -19242,7 +19922,46 @@ length | ひもの長さ | px | 0 |
   name="newtonsCradle/main.js"
   data-type="text/javascript"
   data-credits="[{&quot;label&quot;:&quot;Copyright (c) 2014 Liam Brummitt&quot;,&quot;url&quot;:&quot;http://brm.io/matter-js/&quot;,&quot;timestamp&quot;:1485562830830,&quot;hash&quot;:&quot;b88ed9fe63343a7173cd0c841628e852&quot;}]"
-  data-last-modified="0"
+  data-last-modified="1486628805113"
+  
+  
+  type="hack"
+><!--
+import {
+	Body,
+	Composites,
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+// ニュートンのゆりかごをつくる
+const cradle1 = Composites.newtonsCradle(280, 200, 5, 30, 200);
+
+World.add(world, [
+	// ニュートンのゆりかご
+	cradle1,
+	
+]);
+
+// 一番左の円だけを左上に動かす
+Body.translate(cradle1.bodies[0], {
+	x: -180,
+	y: -100,
+});
+
+
+
+--></script>
+<script
+  class="download_content"
+  name="newtonsCradle/setting.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486628590430"
   
   
   type="hack"
@@ -19252,7 +19971,6 @@ import {
 	Render,
 	Runner,
 	Body,
-	Composites,
 	MouseConstraint,
 	Mouse,
 	World,
@@ -19269,24 +19987,6 @@ Render.run(render);
 const runner = Runner.create();
 Runner.run(runner, engine);
 
-
-// 上のゆりかご
-const cradle1 = Composites.newtonsCradle(280, 100, 5, 30, 200);
-World.add(world, cradle1);
-// 一番左の円を左上に動かす
-Body.translate(cradle1.bodies[0], {
-	x: -180,
-	y: -100
-});
-
-// 下のゆりかご
-const cradle2 = Composites.newtonsCradle(280, 380, 7, 20, 140);
-World.add(world, cradle2);
-// 一番左の円を左上に動かす
-Body.translate(cradle2.bodies[0], {
-	x: -140,
-	y: -100
-});
 
 // マウス操作
 const mouse = Mouse.create(render.canvas);
@@ -19307,6 +20007,54 @@ render.mouse = mouse;
 
 
 feeles.openReadme('newtonsCradle/README.md');
+
+
+export {
+	engine,
+	world,
+	render,
+};
+
+--></script>
+<script
+  class="download_content"
+  name="newtonsCradle/stage.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486628621928"
+  is-trashed
+  
+  type="hack"
+><!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 --></script>
@@ -19540,34 +20288,49 @@ window.MatterWrap = MatterWrap;
   name="pyramid/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486429028165"
+  data-last-modified="1486632403579"
   
   
   type="hack"
 ><!--
 # ピラミッド
 
-`Composites.pyramid` を使うと、オブジェクトでピラミッドを作ることができるよ
-
-
-## ![改造する](pyramid/main.js)
-
-
-### Composites.pyramid(`x`, `y`, `column`, `row`, `columnGap`, `rowGap`, `callback`);
-
-パラメータ | 意味 | 単位 | 最小 | 最大 
---- | --- | --- | --- | ---
-x | ピラミッドの位置（横） | px | 0 | 800
-y | ピラミッドの位置（縦） | px | 0 | 600 
-column | 最大の列の数（横） | 個 | 0 | 100 程度
-row | 最大の段の数（縦） | 個 | 0 | 100 程度
-columnGap | 間かく（横） | px | 0 |  
-rowGap | 間かく（縦） | px | 0 | 
-callback | オブジェクトを作る関数 | | |
-
+ピラミッド建ててみた
 
 [メニューに戻る](index.html)
 
+## 改造してみる
+![ここから始める](pyramid/main.js)
+
+**Composites.pyramid(`1`, `2`, `3`, `4`, `5`, `6`, (x, y) => {  
+　　return Bodies.rectangle(x, y, `7`, `8`, {  
+　　　　render: {  
+　　　　　　fillStyle: `9`,  
+　　　　},  
+　　});  
+});**
+
+| | 意味 | はんい
+--- | --- | --- | --- | ---
+1 | ピラミッドの位置（横） | 0 ~ 800
+2 | ピラミッドの位置（縦） | 0 ~ 600 
+3 | 一番下の列の数（横） | 0 ~ 
+4 | 中央の段の数（タテ） | 0 ~ 
+5 | 横方向の間かく | 0 ~ 
+6 | タテ方向の間かく | 0 ~ 
+7 | オブジェクトの横幅 | 0 ~ 
+8 | オブジェクトの高さ | 0 ~ 
+
+もっと改造
+![設定](pyramid/setting.js)
+![かべ・ゆか](pyramid/stage.js)
+
+
+- - -
+
+## 応用例
+
+[スリングショット](slingshot/index.html)
 
 --></script>
 <script
@@ -19597,7 +20360,48 @@ callback | オブジェクトを作る関数 | | |
   name="pyramid/main.js"
   data-type="text/javascript"
   data-credits="[{&quot;label&quot;:&quot;Copyright (c) 2014 Liam Brummitt&quot;,&quot;url&quot;:&quot;http://brm.io/matter-js/&quot;,&quot;timestamp&quot;:1485562830830,&quot;hash&quot;:&quot;b2da7da0f34f6fd4a8d3656161d2cce1&quot;}]"
-  data-last-modified="0"
+  data-last-modified="1486627632799"
+  
+  
+  type="hack"
+><!--
+import {
+	Composites,
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+World.add(world, [
+	
+	// ピラミッド
+	Composites.pyramid(100, 258, 15, 10, 0, 0, (x, y) => {
+		return Bodies.rectangle(x, y, 40, 40, {
+			// オブジェクトの色
+			render: {
+				fillStyle: "#F0C000",
+			},
+			
+		});
+	}),
+	
+]);
+
+
+
+import './stage';
+
+--></script>
+<script
+  class="download_content"
+  name="pyramid/setting.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486627029039"
   
   
   type="hack"
@@ -19606,46 +20410,20 @@ import {
 	Engine,
 	Render,
 	Runner,
-	Composites,
 	MouseConstraint,
 	Mouse,
 	World,
-	Bodies,
 } from 'matter';
-
 
 import engine from 'engine';
 const world = engine.world;
 
 import render from 'render';
-render.options.showAngleIndicator = true;
 Render.run(render);
 
 const runner = Runner.create();
 Runner.run(runner, engine);
 
-
-// ピラミッドのスタック
-const stack = Composites.pyramid(100, 258, 15, 10, 0, 0, (x, y) => {
-	return Bodies.rectangle(x, y, 40, 40);
-});
-
-World.add(world, [
-	stack,
-	// 壁
-	Bodies.rectangle(400, 0, 800, 50, {
-		isStatic: true
-	}),
-	Bodies.rectangle(800, 300, 50, 600, {
-		isStatic: true
-	}),
-	Bodies.rectangle(0, 300, 50, 600, {
-		isStatic: true
-	}),
-	Bodies.rectangle(400, 605, 800, 50, {
-		isStatic: true
-	})
-]);
 
 // マウス操作
 const mouse = Mouse.create(render.canvas);
@@ -19667,6 +20445,50 @@ render.mouse = mouse;
 
 feeles.openReadme('pyramid/README.md');
 
+
+export {
+	engine,
+	world,
+	render,
+};
+
+--></script>
+<script
+  class="download_content"
+  name="pyramid/stage.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486627083647"
+  
+  
+  type="hack"
+><!--
+import {
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+World.add(world, [
+	// 壁
+	Bodies.rectangle(400, 0, 800, 50, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(800, 300, 50, 600, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(0, 300, 50, 600, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(400, 605, 800, 50, {
+		isStatic: true,
+	}),
+	
+]);
 --></script>
 <script
   class="download_content"
@@ -19928,42 +20750,6 @@ feeles.openReadme('raycasting/README.md');
 	<body>
 	</body>
 </html>
---></script>
-<script
-  class="download_content"
-  name="rectangle/main.js"
-  data-type="text/javascript"
-  data-credits="[]"
-  data-last-modified="1486542562376"
-  
-  
-  type="hack"
-><!--
-import {
-	World,
-	Bodies,
-} from 'matter';
-
-import {
-	world,
-} from './setting.js';
-
-World.add(world, [
-	
-	// 左のオブジェクト
-	Bodies.rectangle(150, 500, 100, 200),
-	
-	// 中のオブジェクト
-	Bodies.rectangle(400, 400, 100, 300),
-	
-	// 右のオブジェクト
-	Bodies.rectangle(500, 100, 400, 100),
-	
-]);
-
-
-import './stage.js';
-
 --></script>
 <script
   class="download_content"
@@ -21203,29 +21989,34 @@ feeles.openReadme('sleeping/README.md');
   name="slingshot/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486428876527"
+  data-last-modified="1486646249456"
   
   
   type="hack"
 ><!--
 # スリングショット
 
-
 ゲームの時間だ！  
-左のオブジェクト（岩）を引っ張ってから離して、たくさん倒そう
-
-次の機能を組み合わせて作っているよ
-- ピラミッド
-- バネ
-- イベント
-
-
-## ![改造する](slingshot/main.js)
-
+左のオブジェクト（岩）を引っ張って離して、山をくずそう
 
 [メニューに戻る](index.html)
 
 
+## どうやって作ってるの？
+
+これらを組み合わせてゲームにしているよ  
+> クリックするとサンプルに移動します
+
+重さを変えるには…[おもさ](density/index.html)  
+山を作るには…[ピラミッド](pyramid/index.html)  
+岩を放つには…[バネ](constraint/index.html)と
+[イベント](events/index.html)  
+
+## 改造に挑戦してみる
+
+![引っ張る・放つ](slingshot/main.js)  
+![ステージ](slingshot/stage.js)  
+![設定](slingshot/setting.js)
 
 --></script>
 <script
@@ -21255,7 +22046,87 @@ feeles.openReadme('sleeping/README.md');
   name="slingshot/main.js"
   data-type="text/javascript"
   data-credits="[{&quot;label&quot;:&quot;Copyright (c) 2014 Liam Brummitt&quot;,&quot;url&quot;:&quot;http://brm.io/matter-js/&quot;,&quot;timestamp&quot;:1485562830830,&quot;hash&quot;:&quot;5d71c7748f2d5e269fcd571936ee0c2a&quot;}]"
-  data-last-modified="0"
+  data-last-modified="1486631730695"
+  
+  
+  type="hack"
+><!--
+import {
+	Composites,
+	Events,
+	Constraint,
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	engine,
+	world,
+	mouseConstraint,
+} from './setting';
+
+
+// 岩のオブジェクトをつくる
+const rock = Bodies.polygon(170, 450, 8, 20, {
+	// おもさ
+	density: 0.01,
+	
+});
+
+// 岩とアンカー地点をバネでつなぐ
+const elastic = Constraint.create({
+	pointA: {
+		x: 170,
+		y: 450
+	},
+	bodyB: rock,
+	stiffness: 0.08,
+	
+});
+
+
+World.add(world, [
+	// 岩のオブジェクト
+	rock,
+	// バネ
+	elastic,
+	
+]);
+
+
+Events.on(engine, 'afterUpdate', () => {
+	// 毎フレームここに入る
+	
+	// 現在の岩のオブジェクト
+	const current = elastic.bodyB;
+	
+	if (mouseConstraint.mouse.button === -1 && (current.position.x > 190 || current.position.y < 430)) {
+		// 画面の中でマウスが離されたとき、ここに入る
+		
+		// 次の岩のオブジェクトを作る
+		const nextRock = Bodies.polygon(170, 450, 7, 20, {
+			// おもさ
+			density: 0.01,
+			
+		});
+		World.add(world, nextRock);
+		
+		// 岩のオブジェクトをバネにつける
+		elastic.bodyB = nextRock;
+	}
+	
+});
+
+
+import './stage';
+
+--></script>
+<script
+  class="download_content"
+  name="slingshot/setting.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486631359807"
   
   
   type="hack"
@@ -21264,13 +22135,9 @@ import {
 	Engine,
 	Render,
 	Runner,
-	Composites,
-	Events,
-	Constraint,
 	MouseConstraint,
 	Mouse,
 	World,
-	Bodies,
 } from 'matter';
 
 
@@ -21283,57 +22150,6 @@ Render.run(render);
 
 const runner = Runner.create();
 Runner.run(runner, engine);
-
-
-// 床のオブジェクト
-const ground = Bodies.rectangle(395, 600, 815, 50, {
-	isStatic: true
-});
-
-// 岩のオブジェクト
-const rockOptions = {
-	density: 0.004
-};
-const rock = Bodies.polygon(170, 450, 8, 20, rockOptions);
-
-// 岩とアンカー地点をバネでつなぐ
-const anchor = {
-	x: 170,
-	y: 450
-};
-const elastic = Constraint.create({
-	pointA: anchor,
-	bodyB: rock,
-	stiffness: 0.05
-});
-
-//　オブジェクトのピラミッド
-const pyramid = Composites.pyramid(500, 300, 9, 10, 0, 0, (x, y) => {
-	return Bodies.rectangle(x, y, 25, 40);
-});
-
-// 上の床のオブジェクト
-const ground2 = Bodies.rectangle(610, 250, 200, 20, {
-	isStatic: true
-});
-
-// 上のピラミッド
-const pyramid2 = Composites.pyramid(550, 0, 5, 10, 0, 0, (x, y) => {
-	return Bodies.rectangle(x, y, 25, 40);
-});
-
-World.add(engine.world, [ground, pyramid, ground2, pyramid2, rock, elastic]);
-
-
-Events.on(engine, 'afterUpdate', () => {
-	const current = elastic.bodyB;
-	if (mouseConstraint.mouse.button === -1 && (current.position.x > 190 || current.position.y < 430)) {
-		// 画面の中でマウスが離されたとき、次の岩のオブジェクトを作る
-		const next = Bodies.polygon(170, 450, 7, 20, rockOptions);
-		World.add(engine.world, next);
-		elastic.bodyB = next;
-	}
-});
 
 
 // マウス操作
@@ -21357,83 +22173,58 @@ render.mouse = mouse;
 feeles.openReadme('slingshot/README.md');
 
 
+export {
+	engine,
+	world,
+	render,
+	mouseConstraint,
+};
+
 --></script>
 <script
   class="download_content"
-  name="snippets/object.json"
-  data-type="application/json"
+  name="slingshot/stage.js"
+  data-type="text/javascript"
   data-credits="[]"
-  data-last-modified="1486431056916"
+  data-last-modified="1486631561347"
   
   
   type="hack"
 ><!--
-{
-	".source.js": {
-		"rectangle": {
-			"prefix": "rectangle",
-			"leftLabel": "レクタングル",
-			"description": "四角形のオブジェクト。中心の位置と大きさを指定できる",
-			"body": `
-World.add(world, Bodies.rectangle(140, 0, 80, 80));`			
-		},
-		"wall": {
-			"prefix": "floor",
-			"leftLabel": "フロア",
-			"description": "固定された四角形のオブジェクト。床や壁になる",
-			"body": `
-World.add(world, Bodies.rectangle(400, 600, 400, 40, {
-	isStatic: true,
-}));`
-		},
-		"slope": {
-			"prefix": "slope",
-			"leftLabel": "スロープ",
-			"description": "少しかたむいたオブジェクト。ボールなどを置くと転がる",
-			"body": `
-World.add(world, Bodies.rectangle(400, 600, 400, 40, {
-	isStatic: true,
-	angle: 0.15,
-}));`
-		},
-		"circle": {
-			"prefix": "circle",
-			"leftLabel": "サークル",
-			"description": "円のオブジェクト。中心の位置と半径を指定できる",
-			"body": `
-World.add(world, Bodies.circle(240, 0, 40));`
-		},
-		"ball": {
-			"prefix": "ball",
-			"leftLabel": "ボール",
-			"description": "跳ね返り係数を 1 にした、円のオブジェクト。とても跳ねる",
-			"body": `
-World.add(world, Bodies.circle(240, 0, 40, {
-	restitution: 1,
-}));`
-		},
-		"redball": {
-			"prefix": "colorball",
-			"leftLabel": "カラーボール",
-			"description": "赤色のボール",
-			"body": `
-World.add(world, Bodies.circle(240, 0, 40, {
-	restitution: 1,
-	render: {
-		fillStyle: 'red',
-		lineWidth: 10,
-		strokeStyle: 'black',
-	}
-}));`
-		}
-	}
-}
+import {
+	Composites,
+	World,
+	Bodies,
+} from 'matter';
 
 
+import {
+	world,
+} from './setting';
 
 
+World.add(world, [
+	// 床のオブジェクト
+	Bodies.rectangle(395, 600, 815, 50, {
+		isStatic: true,
+	}),
 
+	// 上の床のオブジェクト
+	Bodies.rectangle(610, 250, 200, 20, {
+		isStatic: true
+	}),
 
+	// 上のピラミッド
+	Composites.pyramid(550, 0, 5, 10, 0, 0, (x, y) => {
+		return Bodies.rectangle(x, y, 25, 40);
+	}),
+
+	//　下のピラミッド
+	Composites.pyramid(500, 350, 9, 10, 0, 0, (x, y) => {
+		return Bodies.rectangle(x, y, 25, 40);
+	}),
+
+]);
 
 --></script>
 <script
@@ -21441,39 +22232,47 @@ World.add(world, Bodies.circle(240, 0, 40, {
   name="softBody/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486428942583"
+  data-last-modified="1486626827484"
   
   
   type="hack"
 ><!--
 # ソフトボディ
 
-`Composites.softBody` を使うと、ゴムみたいな特性をもった  
-オブジェクトのかたまりを作ることができるよ
-
-
-## ![改造する](softBody/main.js)
-
-
-### Composites.softBody(`x`, `y`, `column`, `row`, `columnGap`, `rowGap`, `crossBrace`, `radius`, `options`)
-パラメータ | 意味 | 単位 | 最小 | 最大 
---- | --- | --- | --- | ---
-x | 位置(横） | px | 0 | 800
-y | 位置(縦） | px | 0 | 600
-column | 列の数 | 個 | 0 | 
-row |　行の数 | 個 | 0 | 
-columnGap |　間かく(横) | px | 0 | 
-rowGap | 間かく(横) | px | 0 | 
-crossBrace | 元に戻るかどうか | フラグ | false | true
-radius | 半径 | px | 0 |
-options | | | |
-friction | 動まさつ力 | 倍 | 0 | 1
-frictionStatic | 静まさつ力 | 倍 | 0 | 1
-
+ソフトボディを使って、ゴムみたいなオブジェクトのかたまりを作ってみた
 
 [メニューに戻る](index.html)
 
 
+## 改造してみる
+
+![ここから始める](softBody/main.js)
+
+**Composites.softBody(`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, {  
+　　friction: `9`,  
+});**
+
+| | 意味 | はんい
+--- | --- | --- 
+1 | 左からのキョリ | 0 ~ 800
+2 | 上からのキョリ | 0 ~ 600
+3 | 右にいくつ出すか | 0 ~
+4 | 下にいくつ出すか | 0 ~
+5 | 横方向の間かく | 0 ~ 
+6 | タテ方向の間かく | 0 ~ 
+7 | 元の形に戻るか | `true` なら元に戻ろうとする
+8 | 円の半径 | 0 ~ 
+9 | まさつの大きさ | 0 ~ 1.0 
+
+もっと改造
+![設定](softBody/setting.js)
+![かべ・ゆか](softBody/stage.js)
+
+- - -
+
+## 応用例
+
+[布](cloth/index.html)
 
 --></script>
 <script
@@ -21503,7 +22302,42 @@ frictionStatic | 静まさつ力 | 倍 | 0 | 1
   name="softBody/main.js"
   data-type="text/javascript"
   data-credits="[{&quot;label&quot;:&quot;Copyright (c) 2014 Liam Brummitt&quot;,&quot;url&quot;:&quot;http://brm.io/matter-js/&quot;,&quot;timestamp&quot;:1485562830830,&quot;hash&quot;:&quot;e2087ef79cdc24ffee46757f9e30298e&quot;}]"
-  data-last-modified="0"
+  data-last-modified="1486626584561"
+  
+  
+  type="hack"
+><!--
+import {
+	Composites,
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+World.add(world, [
+	
+	// ソフトボディ
+	Composites.softBody(250, 100, 6, 5, 0, 0, true, 18, {
+		// まさつの大きさ
+		friction: 0.1,
+		
+	}),
+	
+]);
+
+
+import './stage';
+--></script>
+<script
+  class="download_content"
+  name="softBody/setting.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486626770903"
   
   
   type="hack"
@@ -21512,11 +22346,9 @@ import {
 	Engine,
 	Render,
 	Runner,
-	Composites,
 	MouseConstraint,
 	Mouse,
 	World,
-	Bodies,
 } from 'matter';
 
 
@@ -21531,34 +22363,6 @@ const runner = Runner.create();
 Runner.run(runner, engine);
 
 
-// パラメータ
-const particleOptions = {
-	friction: 0.05,
-	frictionStatic: 0.1,
-	render: {
-		visible: true
-	}
-};
-
-World.add(world, [
-	// ソフトボディ
-	Composites.softBody(250, 100, 5, 5, 0, 0, false, 18, particleOptions),
-	Composites.softBody(400, 300, 8, 3, 0, 0, false, 15, particleOptions),
-	Composites.softBody(250, 400, 4, 4, 0, 0, false, 15, particleOptions),
-	// 壁
-	Bodies.rectangle(400, 0, 800, 50, {
-		isStatic: true
-	}),
-	Bodies.rectangle(400, 600, 800, 50, {
-		isStatic: true
-	}),
-	Bodies.rectangle(800, 300, 50, 600, {
-		isStatic: true
-	}),
-	Bodies.rectangle(0, 300, 50, 600, {
-		isStatic: true
-	})
-]);
 
 // マウス操作
 const mouse = Mouse.create(render.canvas);
@@ -21579,6 +22383,52 @@ render.mouse = mouse;
 
 
 feeles.openReadme('softBody/README.md');
+
+
+export {
+	engine,
+	world,
+	render,
+};
+
+--></script>
+<script
+  class="download_content"
+  name="softBody/stage.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486626278117"
+  
+  
+  type="hack"
+><!--
+import {
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+World.add(world, [
+	
+	// 壁
+	Bodies.rectangle(400, 0, 800, 50, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(400, 600, 800, 50, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(800, 300, 50, 600, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(0, 300, 50, 600, {
+		isStatic: true,
+	}),
+	
+]);
 
 --></script>
 <script
@@ -21811,46 +22661,48 @@ feeles.openReadme('sprites/README.md');
   name="stack/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486428828740"
+  data-last-modified="1486692977927"
   
   
   type="hack"
 ><!--
 # スタック
 
-
-`Composites.stack` を使うと、たくさんのオブジェクトを一気に作ることができるよ
-
-オブジェクトをまとめたものを、 Matter.js では **スタック** と呼ぶんだ
-
-
-## ![改造する](stack/main.js)
-
-
-## スタックのパラメータ
-Composites.stack( *x* ,  *y* ,  *column* ,  *row *,  *columnGap* , *rowGap* , *callback* );
-パラメータ | 意味 | 単位 | 最小 | 最大 
---- | --- | --- | --- | ---
-x | スタックの位置（横） | px | 0 | 800
-y | スタックの位置（縦） | px | 0 | 600 
-column | 列の数　（横） | 個 | 0 | 100 程度
-row | 行の数（縦） | 個 | 0 | 100 程度
-columnGap | 列の間かく | px | 0 | 800 
-rowGap | 行の間かく | px | 0 | 600
-callback | オブジェクトをつくる関数 | - | - | -
-
-> x を 400, y を 300 にすると、ちょうど真ん中になるよ
-
-### callback
-
-この関数がオブジェクトの数だけ使われることになる  
-`x`, `y` という数字が与えられるので、  
-その位置に応じたオブジェクトを作って *return* するんだ
-
+スタックを使って、オブジェクトを一気に出してみた
 
 [メニューに戻る](index.html)
 
 
+## 改造してみる
+
+![ここから始める](stack/main.js)
+
+**Composites.stack(`1`, `2`, `3`, `4`, `5`, `6`, (x, y) => {  
+　　return Bodies.rectangle(x, y, `7`, `8`);  
+});**
+
+|| 意味 | はんい
+--- | --- | --- 
+1 | 左からのキョリ | 0 ~ 800
+2 | 上からのキョリ | 0 ~ 600
+3 | 右にいくつ出すか（横） | 0 ~ 
+4 | 下にいくつ出すか（タテ） | 0 ~ 
+5 | 列の間かく（横） | 0 ~ 
+6 | 行の間かく（タテ） | 0 ~ 
+7 | オブジェクトの横幅 | 0 ~ 
+8 | オブジェクトの高さ | 0 ~ 
+
+
+もっと改造
+![設定](stack/setting.js)
+![かべ・ゆか](stack/stage.js)
+
+- - -
+
+## 応用例
+
+
+[モンケーン](wreckingBall/index.html)  
 
 --></script>
 <script
@@ -21880,7 +22732,47 @@ callback | オブジェクトをつくる関数 | - | - | -
   name="stack/main.js"
   data-type="text/javascript"
   data-credits="[{&quot;label&quot;:&quot;Copyright (c) 2014 Liam Brummitt&quot;,&quot;url&quot;:&quot;http://brm.io/matter-js/&quot;,&quot;timestamp&quot;:1485562830830,&quot;hash&quot;:&quot;490da70bc7c611a0e5e9a3a93e1242e0&quot;}]"
-  data-last-modified="0"
+  data-last-modified="1486623544032"
+  
+  
+  type="hack"
+><!--
+import {
+	Composites,
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+World.add(world, [
+	
+	// オブジェクトのスタック
+	Composites.stack(200, 380, 10, 5, 0, 0, (x, y) => {
+		return Bodies.rectangle(x, y, 40, 40);
+	}),
+	
+]);
+
+
+
+
+
+
+
+import './stage';
+
+
+--></script>
+<script
+  class="download_content"
+  name="stack/setting.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486623466875"
   
   
   type="hack"
@@ -21889,11 +22781,9 @@ import {
 	Engine,
 	Render,
 	Runner,
-	Composites,
 	MouseConstraint,
 	Mouse,
 	World,
-	Bodies,
 } from 'matter';
 
 
@@ -21901,34 +22791,12 @@ import engine from 'engine';
 const world = engine.world;
 
 import render from 'render';
-render.options.showAngleIndicator = true;
 Render.run(render);
 
 const runner = Runner.create();
 Runner.run(runner, engine);
 
 
-// オブジェクトのスタック
-const stack = Composites.stack(200, 380, 10, 5, 0, 0, (x, y) => {
-	return Bodies.rectangle(x, y, 40, 40);
-});
-
-World.add(world, [
-	stack,
-	// 壁
-	Bodies.rectangle(400, 0, 800, 50, {
-		isStatic: true
-	}),
-	Bodies.rectangle(800, 300, 50, 600, {
-		isStatic: true
-	}),
-	Bodies.rectangle(0, 300, 50, 600, {
-		isStatic: true
-	}),
-	Bodies.rectangle(400, 606, 800, 50.5, {
-		isStatic: true
-	})
-]);
 
 // マウス操作
 const mouse = Mouse.create(render.canvas);
@@ -21950,13 +22818,57 @@ render.mouse = mouse;
 
 feeles.openReadme('stack/README.md');
 
+
+export {
+	engine,
+	world,
+	render,
+};
+
+--></script>
+<script
+  class="download_content"
+  name="stack/stage.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486623572004"
+  
+  
+  type="hack"
+><!--
+import {
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+World.add(world, [
+	// 壁
+	Bodies.rectangle(400, 0, 800, 50, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(800, 300, 50, 600, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(0, 300, 50, 600, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(400, 606, 800, 50.5, {
+		isStatic: true,
+	})
+]);
+
 --></script>
 <script
   class="download_content"
   name="staticFriction/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486470630773"
+  data-last-modified="1486703373275"
   
   
   type="hack"
@@ -21964,6 +22876,7 @@ feeles.openReadme('stack/README.md');
 # 静止まさつ力
 > せいし-まさつ-りょく  
 静止摩擦力
+
 
 ## スタックと静止まさつ力の応用
 
@@ -21995,7 +22908,7 @@ staticFriction | 静止まさつの大きさ | 0 ~ 1.0
   name="staticFriction/index.html"
   data-type="text/html"
   data-credits="[]"
-  data-last-modified="0"
+  data-last-modified="1486703389628"
   
   
   type="hack"
@@ -23622,33 +24535,34 @@ feeles.openReadme('views/README.md');
   name="wreckingBall/README.md"
   data-type="text/x-markdown"
   data-credits="[]"
-  data-last-modified="1486429878854"
+  data-last-modified="1486699403577"
   
   
   type="hack"
 ><!--
 # モンケーン
 
-
 モンケーンとは、建物を解体するなどの目的に使われれる  
-クレーンで吊り上げられた大型の鋼球のこと
-
-これも、何かに使えそうだね！
-
-
-## ![改造する](wreckingBall/main.js)
-
-
-## パラメータ
-パラメータ | 意味 | 単位 | 最小 | 最大 
---- | --- | --- | --- | ---
-density | 密度 | *kg m^-2* | 0 | Infinity
-frictionAir | 抵抗の大きさ | 倍 | 0 | 1.0 
-isStatic | 静止するかどうか | フラグ | false | true 
-
+クレーンで吊り上げられた巨大な重い球のこと
 
 [メニューに戻る](index.html)
 
+
+## どうやって作ってるの？
+
+これらを組み合わせているよ  
+> クリックするとサンプルに移動します
+
+重さを変えるには…[おもさ](density/index.html)  
+空気ていこうを変えるには…[空気ていこう](airFriction/index.html)  
+振り子を作るには…[バネ](constraint/index.html)  
+山を作るには…[スタック](stack/index.html)  
+
+## 改造に挑戦してみる
+
+![重い球](wreckingBall/main.js)  
+![ステージ](wreckingBall/stage.js)  
+![設定](wreckingBall/setting.js)
 
 --></script>
 <script
@@ -23678,7 +24592,65 @@ isStatic | 静止するかどうか | フラグ | false | true
   name="wreckingBall/main.js"
   data-type="text/javascript"
   data-credits="[{&quot;label&quot;:&quot;Copyright (c) 2014 Liam Brummitt&quot;,&quot;url&quot;:&quot;http://brm.io/matter-js/&quot;,&quot;timestamp&quot;:1485562830830,&quot;hash&quot;:&quot;d082a017d0fb8383274c59d4bb00cea2&quot;}]"
-  data-last-modified="0"
+  data-last-modified="1486692854900"
+  
+  
+  type="hack"
+><!--
+import {
+	World,
+	Constraint,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+// 重い球
+const ball1 = Bodies.circle(100, 400, 50, {
+	// おもさ
+	density: 0.04,
+	// 空気ていこう
+	frictionAir: 0.005,
+	
+});
+
+// 重い球と空中のある点をつなぐ
+const joint1 = Constraint.create({
+	// 固定したいオブジェクト
+	bodyA: ball1,
+	// 固定したい点
+	pointB: {
+		x: 300,
+		y: 100
+	},
+	// バネの強さ
+	stiffness: 1.0,
+	
+});
+
+World.add(world, [
+	// 重い球
+	ball1,
+	// ジョイント
+	joint1,
+	
+]);
+
+
+
+
+import './stage';
+
+--></script>
+<script
+  class="download_content"
+  name="wreckingBall/setting.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486693021297"
   
   
   type="hack"
@@ -23687,12 +24659,9 @@ import {
 	Engine,
 	Render,
 	Runner,
-	Composites,
 	MouseConstraint,
 	Mouse,
 	World,
-	Constraint,
-	Bodies,
 } from 'matter';
 
 
@@ -23701,54 +24670,12 @@ const world = engine.world;
 
 import render from 'render';
 render.options.showAngleIndicator = true;
+render.options.background = '#202020';
 Render.run(render);
 
 const runner = Runner.create();
 Runner.run(runner, engine);
 
-
-// 段の数
-const rows = 10;
-const yy = 600 - 21 - 40 * rows;
-
-// オブジェクトのスタック
-const stack = Composites.stack(400, yy, 5, rows, 0, 0, (x, y) => {
-	return Bodies.rectangle(x, y, 40, 40);
-});
-
-World.add(world, [
-	stack,
-	// 壁のオブジェクト
-	Bodies.rectangle(400, 0, 800, 50, {
-		isStatic: true
-	}),
-	Bodies.rectangle(400, 600, 800, 50, {
-		isStatic: true
-	}),
-	Bodies.rectangle(800, 300, 50, 600, {
-		isStatic: true
-	}),
-	Bodies.rectangle(0, 300, 50, 600, {
-		isStatic: true
-	})
-]);
-
-// 鋼球
-const ball = Bodies.circle(100, 400, 50, {
-	density: 0.04,
-	frictionAir: 0.005
-});
-
-World.add(world, ball);
-
-// 鋼球を空中のある点と一定の距離を保つようにつなぐ
-World.add(world, Constraint.create({
-	pointA: {
-		x: 300,
-		y: 100
-	},
-	bodyB: ball
-}));
 
 // マウス操作
 const mouse = Mouse.create(render.canvas);
@@ -23769,6 +24696,585 @@ render.mouse = mouse;
 
 
 feeles.openReadme('wreckingBall/README.md');
+
+
+export {
+	engine,
+	world,
+	render,
+};
+
+--></script>
+<script
+  class="download_content"
+  name="wreckingBall/stage.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486692241621"
+  
+  
+  type="hack"
+><!--
+import {
+	Composites,
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+World.add(world, [
+	// スタック
+	Composites.stack(400, 179, 5, 10, 0, 0, (x, y) => {
+		return Bodies.rectangle(x, y, 40, 40);
+	}),
+	
+	// 壁のオブジェクト
+	Bodies.rectangle(400, 0, 800, 50, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(400, 600, 800, 50, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(800, 300, 50, 600, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(0, 300, 50, 600, {
+		isStatic: true,
+	}),
+	
+]);
+
+--></script>
+<script
+  class="download_content"
+  name="index.html"
+  data-type="text/html"
+  data-credits="[]"
+  data-last-modified="1486728002924"
+  
+  
+  type="hack"
+><!--
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>.メニュー</title>
+		<style>
+			html { 
+				background-color: #FFFFFF; 
+				max-height: 600px;
+				min-width: 400px;
+			}
+			a.btn {
+				display: inline-block;
+				background-color: #3399FF;
+				color: #FFFFFF;
+				text-decoration: none;
+				margin: 4px;
+				padding: 4px;
+				border-radius: 2px;
+				white-space: nowrap;
+				transform: rotate(-4deg);
+			}
+		</style>
+		<script type="text/javascript" src="main.js"></script>
+	</head>
+	<body>
+		<h2>Menu</h2>
+		<h3>動くコンテンツ🎮</h3>
+		<a class="btn" href="slingshot/index.html">スリングショット</a>
+		<a class="btn" href="coins/index.html">コインゲーム</a>
+		<a class="btn" href="wreckingBall/index.html">モンケーン</a>
+		<a class="btn" href="bridge/index.html">ブリッジ</a>
+--><!-- 		<a class="btn" href="ballPool/index.html">ボールプール</a> --><!--
+		<a class="btn" href="catapult/index.html">発射台</a>
+--><!-- 		<a class="btn" href="cloth/index.html">布</a> --><!--
+		<a class="btn" href="chains/index.html">ロープ</a>
+--><!-- 		<a class="btn" href="avalanche/index.html">坂道</a> --><!--
+--><!-- 		<a class="btn" href="sprites/index.html">ビーチボールと木の箱</a> --><!--
+--><!-- 		<a class="btn" href="mixed/index.html">ミックス</a> --><!--
+--><!-- 		<a class="btn" href="timescale/index.html">スローモーション</a> --><!--
+--><!-- 		<a class="btn" href="staticFriction/index.html">静止まさつ力</a> --><!--
+		<a class="btn" href="free/index.html">自由コーナー</a>
+		<h3>きほんのパラメータ🔰</h3>
+		<a class="btn" href="rectangle/index.html">位置と大きさ</a>
+		<a class="btn" href="isStatic/index.html">かべ・ゆか</a>
+		<a class="btn" href="angle/index.html">かたむき</a>
+		<a class="btn" href="density/index.html">重さ</a>
+		<a class="btn" href="restitution/index.html">はね返り</a>
+		<a class="btn" href="airFriction/index.html">空気ていこう</a>
+		<a class="btn" href="friction/index.html">まさつ力</a>
+		<a class="btn" href="render/index.html">色</a>
+		<a class="btn" href="chamfer/index.html">角丸 1</a>
+		<a class="btn" href="rounded/index.html">角丸 2</a>
+		<a class="btn" href="timescaleSimple/index.html">時間の早さ</a>
+		<a class="btn" href="gravity/index.html">重力</a>
+		<h3>オブジェクトを組み合わせる⚡️</h3>
+		<a class="btn" href="stack/index.html">スタック</a>
+		<a class="btn" href="circleStack/index.html">円のスタック</a>
+		<a class="btn" href="constraint/index.html">バネ</a>
+		<a class="btn" href="softBody/index.html">ソフトボディ</a>
+		<a class="btn" href="pyramid/index.html">ピラミッド</a>
+		<a class="btn" href="car/index.html">車</a>
+		<a class="btn" href="newtonsCradle/index.html">ニュートンのゆりかご</a>
+		<a class="btn" href="compound/index.html">オブジェクトの合成</a>
+		<a class="btn" href="compoundStack/index.html">合成したオブジェクトのスタック</a>
+		<h3>ハイレベル💋</h3>
+		<a class="btn" href="events/index.html">イベント</a>
+		<a class="btn" href="sensors/index.html">センサー</a>
+		<a class="btn" href="manipulation/index.html">オブジェクトを直接操作する</a>
+		<a class="btn" href="compositeManipulation/index.html">スタック全体の操作</a>
+		<a class="btn" href="collisionFiltering/index.html">カテゴリーごとのしょう突</a>
+		<a class="btn" href="concave/index.html">好きな形のオブジェクト</a>
+		<a class="btn" href="raycasting/index.html">線分とのしょうとつ</a>
+		<a class="btn" href="views/index.html">ズームとスクロール</a>
+		<a class="btn" href="attractors/index.html">万有引力</a>
+		<h3>コラム🎤</h3>
+		<a class="btn" href="broadphase/index.html">ブロードフェーズ</a>
+		<a class="btn" href="sleeping/index.html">スリープモード</a>
+		<a class="btn" href="svg/index.html">ベクタ画像</a>
+		<a class="btn" href="terrain/index.html">地形</a>
+		<a class="btn" href="gyro/index.html">ジャイロセンサー</a>
+		<a class="btn" href="stress/index.html">圧力 1</a>
+		<a class="btn" href="stress2/index.html">圧力 2</a>
+		<hr>
+		これらのサンプルは Liam Brummitt 氏の
+		<a class="btn" href="http://brm.io/matter-js/demo/">原作</a>
+		をもとに改変したものです
+	</body>
+</html>
+--></script>
+<script
+  class="download_content"
+  name="free/index.html"
+  data-type="text/html"
+  data-credits="[]"
+  data-last-modified="1486728221018"
+  
+  
+  type="hack"
+><!--
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>.自由コーナー</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="free/main.js"></script>
+	</head>
+	<body>
+	</body>
+</html>
+--></script>
+<script
+  class="download_content"
+  name="free/README.md"
+  data-type="text/x-markdown"
+  data-credits="[]"
+  data-last-modified="1486728232045"
+  
+  
+  type="hack"
+><!--
+# 自由コーナー
+
+ここでは君の作りたいものをゼロから作り始めることができるよ  
+思う存分、研究を楽しもう！！
+
+[メニューに戻る](index.html)
+
+
+## 作る
+
+![メインプログラム](free/main.js)  
+![かべ・ゆか](free/stage.js)  
+![設定](free/setting.js)  
+
+--></script>
+<script
+  class="download_content"
+  name="free/stage.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486728351881"
+  
+  
+  type="hack"
+><!--
+import {
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+World.add(world, [
+	// かべのオブジェクト
+	Bodies.rectangle(400, 0, 800, 50, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(400, 600, 800, 50, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(800, 300, 50, 600, {
+		isStatic: true,
+	}),
+	Bodies.rectangle(0, 300, 50, 600, {
+		isStatic: true,
+	}),
+	
+]);
+
+--></script>
+<script
+  class="download_content"
+  name="free/setting.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486728490702"
+  
+  
+  type="hack"
+><!--
+import {
+	Render,
+	Runner,
+	MouseConstraint,
+	Mouse,
+	World,
+} from 'matter';
+
+
+import engine from 'engine';
+const world = engine.world;
+
+import render from 'render';
+Render.run(render);
+
+const runner = Runner.create();
+Runner.run(runner, engine);
+
+
+// マウス操作
+const mouse = Mouse.create(render.canvas);
+const mouseConstraint = MouseConstraint.create(engine, {
+	mouse: mouse,
+	constraint: {
+		stiffness: 0.2,
+		render: {
+			visible: false
+		}
+	}
+});
+
+World.add(world, mouseConstraint);
+
+// keep the mouse in sync with rendering
+render.mouse = mouse;
+
+
+feeles.openReadme('free/README.md');
+
+
+export {
+	engine,
+	world,
+	render,
+};
+
+--></script>
+<script
+  class="download_content"
+  name="snippets/object.json"
+  data-type="application/json"
+  data-credits="[]"
+  data-last-modified="1486728661223"
+  
+  
+  type="hack"
+><!--
+{
+	".source.js": {
+		"rectangle": {
+			"prefix": "rectangle",
+			"leftLabel": "レクタングル",
+			"description": "四角形のオブジェクト。中心の位置と大きさを指定できる",
+			"body": `
+Bodies.rectangle(140, 0, 80, 80),`			
+		},
+		"wall": {
+			"prefix": "floor",
+			"leftLabel": "フロア",
+			"description": "固定された四角形のオブジェクト。床や壁になる",
+			"body": `
+Bodies.rectangle(400, 600, 400, 40, {
+	isStatic: true,
+
+}),`
+		},
+		"slope": {
+			"prefix": "slope",
+			"leftLabel": "スロープ",
+			"description": "少しかたむいたオブジェクト。ボールなどを置くと転がる",
+			"body": `
+Bodies.rectangle(400, 600, 400, 40, {
+	isStatic: true,
+	angle: 0.15,
+
+}),`
+		},
+		"circle": {
+			"prefix": "circle",
+			"leftLabel": "サークル",
+			"description": "円のオブジェクト。中心の位置と半径を指定できる",
+			"body": `
+Bodies.circle(240, 0, 40)),`
+		},
+		"ball": {
+			"prefix": "ball",
+			"leftLabel": "ボール",
+			"description": "跳ね返り係数を 1 にした、円のオブジェクト。とても跳ねる",
+			"body": `
+Bodies.circle(240, 0, 40, {
+	restitution: 1,
+
+}),`
+		},
+		"redball": {
+			"prefix": "colorball",
+			"leftLabel": "カラーボール",
+			"description": "赤色のボール",
+			"body": `
+Bodies.circle(240, 0, 40, {
+	restitution: 1,
+	render: {
+		fillStyle: 'red',
+		lineWidth: 10,
+		strokeStyle: 'black',
+	},
+
+}),`
+		}
+	}
+}
+
+
+
+
+
+
+
+--></script>
+<script
+  class="download_content"
+  name="free/main.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486728684811"
+  
+  
+  type="hack"
+><!--
+import {
+	World,
+	Bodies,
+	
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+World.add(world, [
+	
+	// ここにオブジェクトを追加する
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+]);
+
+
+
+import './stage';
+
+--></script>
+<script
+  class="download_content"
+  name="rectangle/main.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486728748521"
+  
+  
+  type="hack"
+><!--
+import {
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting.js';
+
+World.add(world, [
+	
+	// 左のオブジェクト
+	Bodies.rectangle(150, 500, 100, 200),
+	
+	// 中のオブジェクト
+	Bodies.rectangle(400, 400, 100, 300),
+	
+	// 右のオブジェクト
+	Bodies.rectangle(500, 100, 400, 100),
+	
+]);
+
+
+import './stage.js';
+
+--></script>
+<script
+  class="download_content"
+  name="angle/main.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486728788749"
+  
+  
+  type="hack"
+><!--
+import {
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting.js';
+
+World.add(world, [
+	
+	// 左のオブジェクト
+	Bodies.rectangle(200, 500, 10, 500, {
+		// かたむき
+		angle: 0.2,
+		
+	}),
+	
+	// 右のオブジェクト
+	Bodies.rectangle(350, 450, 10, 700, {
+		// かたむき
+		angle: 2.36,
+		
+	}),
+	
+]);
+
+
+import './stage.js';
+
+--></script>
+<script
+  class="download_content"
+  name="gravity/main.js"
+  data-type="text/javascript"
+  data-credits="[{&quot;label&quot;:&quot;Copyright (c) 2014 Liam Brummitt&quot;,&quot;url&quot;:&quot;http://brm.io/matter-js/&quot;,&quot;timestamp&quot;:1485562830830,&quot;hash&quot;:&quot;1e9632886ce4de646517fc132779e900&quot;}]"
+  data-last-modified="1486728872782"
+  
+  
+  type="hack"
+><!--
+import {
+	World,
+	Bodies,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+// 重力
+world.gravity.x = 0;
+world.gravity.y = -1;
+
+
+
+
+
+
+
+
+
+
+
+import './stage';
+import './stack';
+
+--></script>
+<script
+  class="download_content"
+  name="constraint/main.js"
+  data-type="text/javascript"
+  data-credits="[]"
+  data-last-modified="1486728926231"
+  
+  
+  type="hack"
+><!--
+import {
+	World,
+	Bodies,
+	Constraint,
+} from 'matter';
+
+import {
+	world,
+} from './setting';
+
+
+// オブジェクトをつくる
+const square1 = Bodies.rectangle(200, 100, 100, 100);
+
+// オブジェクトを空中に固定するバネ
+const spring1 = Constraint.create({
+	// 固定するオブジェクト
+	bodyA: square1,
+	// 固定する位置
+	pointB: {　　
+		x: 400,
+		y: 100,
+	},
+	// バネの強さ
+	stiffness: 0.001,
+});
+
+World.add(world, [
+	// オブジェクト
+	square1,
+	// バネ
+	spring1,
+	
+]);
+
+
+
 
 --></script>
 
